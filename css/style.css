@@ -1,0 +1,93 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display&display=swap');
+
+:root{
+  --color-text: #4D4D4D;
+  --color-turquesa: #3DECCA;
+  --color-lila: #850EFE;
+  --sombra-text: 0px 1px 13px rgba(0, 0, 0, 0.6);
+}
+
+body{
+	font-family: 'Montserrat', sans-serif;
+	color: var(--color-text);
+}
+
+h1{
+	font-family: 'Playfair Display', serif;
+	font-size: 2rem;
+}
+
+h2{
+	font-family: 'Playfair Display', serif;
+	font-size: 1.5rem;
+	color: white;
+	text-shadow: var(--sombra-text);
+}
+
+h3{
+	font-size: 0.9rem;
+	font-weight: 400;
+	color: white;
+	text-shadow: var(--sombra-text);
+}
+
+a{
+	color: var(--color-text);
+	background: -webkit-linear-gradient(left, #850EFE, #3DECCA);
+	background: linear-gradient(to right, #850EFE, #3DECCA);
+	-webkit-background-clip: text;  
+    -webkit-text-fill-color: transparent;
+}
+
+a:hover{
+  animation: fluido 2s ease-in-out infinite;
+  background: -webkit-linear-gradient(left, #850EFE, #3DECCA);
+  background: linear-gradient(to right, #850EFE, #3DECCA);
+  background-size: 300%;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn{
+  color: var(--color-lila);
+  border: solid 1px transparent;
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(90deg, #3DECCA, #850EFE);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 1px 1000px 1px #fff inset;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.btn:hover{
+  border: solid 1px transparent;
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(90deg, #850EFE, #3DECCA);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: none;
+}
+
+.xs{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1rem;
+	padding-left: 20px;
+}
+
+.navbar{
+	box-shadow: 0px -6px 20px 0px rgba(0, 0, 0, 0.3);
+}
+
+#navbar-logo{
+	max-width: 130px;
+	height: auto;
+}
+
+@keyframes fluido {
+    0% { background-position: 0 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0 50% }
+}
