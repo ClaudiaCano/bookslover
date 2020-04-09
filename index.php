@@ -9,11 +9,16 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	
+	<!-- Star Rating SVG -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/star-rating-svg.css" type="text/css" >
+	
 	<!-- CSS -->
 	<link rel="stylesheet" href="css/flickity.css" media="screen">
 	<link rel="stylesheet" href="css/home.css">
 	<link rel="stylesheet" href="css/style.css">
-
+ 
+	<!-- API key AIzaSyC9vti0RfcMWmz6j5Dhu1waCSTe1f3qbEM -->
     <title>bookslovers</title>
   </head>
   <body>
@@ -39,6 +44,7 @@
 				<div class="col-8">
 					<h2>Un cuento perfecto</h2>
 					<h3>Elisabeth Benabent</h3>
+					<div class="my-rating no-action"></div>
 				</div>
 			</div>
 		  </div>
@@ -105,12 +111,23 @@
   </div>
 </div>
 	  
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="/__/firebase/7.13.2/firebase-app.js"></script>
 
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+		 https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="/__/firebase/7.13.2/firebase-analytics.js"></script>
+
+	<!-- Initialize Firebase -->
+	<script src="/__/firebase/init.js"></script>
+	  
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 	<script src="js/flickity.pkgd.min.js"></script>
+	<script src="js/jquery.star-rating-svg.js"></script>
+	<script src="js/my-rating.js"></script>
   </body>
 </html>
