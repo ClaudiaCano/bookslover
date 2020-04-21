@@ -1,5 +1,8 @@
 <!doctype html>
-<?php include 'php/es.php'?>
+<?php 
+include 'php/es.php';
+include "./php/bestsellers.php";
+?>
 <html lang="es">
 <head>
     <!-- Meta tags -->
@@ -19,7 +22,7 @@
 	<link rel="stylesheet" href="css/style.css">
  
 	<!-- API key AIzaSyC9vti0RfcMWmz6j5Dhu1waCSTe1f3qbEM -->
-    <title>bookslovers</title>
+    <title>bookslover</title>
   </head>
   <body>
 	  
@@ -32,69 +35,134 @@
 	</ul>
 </nav>
 	  
-<div class="container mt-3">
+<div id="container" class="mt-5">
   <div class="row mb-5">
-    <div class="col">
+    <div class="col-12">
       <h1><?php echo $home_titulo_slider?></h1>
 		<div class="carousel" data-flickity='{"cellAlign": "left", "prevNextButtons": false, "pageDots": false}'>
 		  <div id="card_1" class="carousel-cell p-3">
-		  	<div class="row">
+		  	<div class="row align-items-center mb-0">
 				<div class="col-4">
+					<img class="img-fluid cover" src="<?php echo $book1['volumeInfo']['imageLinks']['thumbnail']?>" >
 				</div>
-				<div class="col-8">
-					<h2>Un cuento perfecto</h2>
-					<h3>Elisabeth Benabent</h3>
-					<div class="my-rating no-action"></div>
+				<div class="col-8 info">
+					<div class="row mt-3" style="height: 50%;">
+						<div class="col">
+							<h2><?php echo $book1['volumeInfo']['title']?></h2>
+							<h3><?php echo $book1['volumeInfo']['authors'][0]?></h3>
+						</div>
+					</div>
+					<div class="row align-items-end" style="height: 50%; margin-top: -2rem;">
+						<div class="col ">
+							<p class="mb-0"><?php echo $book1['saleInfo']['listPrice']["amount"]." €"?></p>
+							<div class="my-rating-4 no-action"></div>			
+						</div>
+					</div>
 				</div>
 			</div>
 		  </div>
 		  <div id="card_2" class="carousel-cell p-3">
 		  	<div class="row">
 				<div class="col-4">
+					<img class="img-fluid cover" src="<?php echo $book2['volumeInfo']['imageLinks']['thumbnail']?>" >
 				</div>
-				<div class="col-8">
-					<h2>Un cuento perfecto</h2>
-					<h3>Elisabeth Benabent</h3>
+				<div class="col-8 info">
+					<div class="row mt-3" style="height: 50%;">
+						<div class="col">
+							<h2><?php echo $book2['volumeInfo']['title']?></h2>
+							<h3><?php echo $book2['volumeInfo']['authors'][0]?></h3>
+						</div>
+					</div>
+					<div class="row align-items-end" style="height: 50%; margin-top: -2rem;">
+						<div class="col ">
+							<p class="mb-0"><?php echo $book2['saleInfo']['listPrice']["amount"]." €"?></p>
+							<div class="my-rating-5 no-action"></div>			
+						</div>
+					</div>
 				</div>
 			</div>
 		  </div>
 			<div id="card_3" class="carousel-cell p-3">
 		  	<div class="row">
 				<div class="col-4">
+					<img class="img-fluid cover" src="<?php echo $book3['volumeInfo']['imageLinks']['thumbnail']?>" >
 				</div>
-				<div class="col-8">
-					<h2>Un cuento perfecto</h2>
-					<h3>Elisabeth Benabent</h3>
+				<div class="col-8 info">
+					<div class="row mt-3" style="height: 50%;">
+						<div class="col">
+							<h2><?php echo $book3['volumeInfo']['title']?></h2>
+							<h3><?php echo $book3['volumeInfo']['authors'][0]?></h3>
+						</div>
+					</div>
+					<div class="row align-items-end" style="height: 50%; margin-top: -2rem;">
+						<div class="col ">
+							<p class="mb-0"><?php echo $book3['saleInfo']['listPrice']["amount"]." €"?></p>
+							<div class="my-rating-4 no-action"></div>			
+						</div>
+					</div>
 				</div>
 			</div>
 		  </div>
 			<div id="card_4" class="carousel-cell p-3">
 		  	<div class="row">
 				<div class="col-4">
+					<img class="img-fluid cover" src="<?php echo $book4['volumeInfo']['imageLinks']['thumbnail']?>" >
 				</div>
-				<div class="col-8">
-					<h2>Un cuento perfecto</h2>
-					<h3>Elisabeth Benabent</h3>
+				<div class="col-8 info">
+					<div class="row mt-3" style="height: 50%;">
+						<div class="col">
+							<h2><?php echo $book4['volumeInfo']['title']?></h2>
+							<h3><?php echo $book4['volumeInfo']['authors'][0]?></h3>
+						</div>
+					</div>
+					<div class="row align-items-end" style="height: 50%; margin-top: -2rem;">
+						<div class="col ">
+							<p class="mb-0"><?php echo $book4['saleInfo']['listPrice']["amount"]." €"?></p>
+							<div class="my-rating-5 no-action"></div>			
+						</div>
+					</div>
 				</div>
 			</div>
 		  </div>
 			<div id="card_5" class="carousel-cell p-3">
 		  	<div class="row">
 				<div class="col-4">
+					<img class="img-fluid cover" src="<?php echo $book5['volumeInfo']['imageLinks']['thumbnail']?>" >
 				</div>
-				<div class="col-8">
-					<h2>Un cuento perfecto</h2>
-					<h3>Elisabeth Benabent</h3>
+				<div class="col-8 info">
+					<div class="row mt-3" style="height: 50%;">
+						<div class="col">
+							<h2><?php echo $book5['volumeInfo']['title']?></h2>
+							<h3><?php echo $book5['volumeInfo']['authors'][0]?></h3>
+						</div>
+					</div>
+					<div class="row align-items-end" style="height: 50%; margin-top: -2rem;">
+						<div class="col ">
+							<p class="mb-0"><?php echo $book5['saleInfo']['listPrice']["amount"]." €"?></p>
+							<div class="my-rating-5 no-action"></div>			
+						</div>
+					</div>
 				</div>
 			</div>
 		  </div>
 			<div id="card_6" class="carousel-cell p-3">
 		  	<div class="row">
 				<div class="col-4">
+					<img class="img-fluid cover" src="<?php echo $book6['volumeInfo']['imageLinks']['thumbnail']?>" >
 				</div>
-				<div class="col-8">
-					<h2>Un cuento perfecto</h2>
-					<h3>Elisabeth Benabent</h3>
+				<div class="col-8 info">
+					<div class="row mt-3" style="height: 50%;">
+						<div class="col">
+							<h2><?php echo $book6['volumeInfo']['title']?></h2>
+							<h3><?php echo $book6['volumeInfo']['authors'][0]?></h3>
+						</div>
+					</div>
+					<div class="row align-items-end" style="height: 50%; margin-top: -2rem;">
+						<div class="col ">
+							<p class="mb-0"><?php echo $book6['saleInfo']['listPrice']["amount"]." €"?></p>
+							<div class="my-rating-4 no-action"></div>			
+						</div>
+					</div>
 				</div>
 			</div>
 		  </div>
@@ -110,7 +178,9 @@
     </div>
   </div>
 </div>
-	  
+
+
+
 	<!-- The core Firebase JS SDK is always required and must be listed first -->
 	<script src="/__/firebase/7.13.2/firebase-app.js"></script>
 

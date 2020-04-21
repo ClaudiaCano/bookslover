@@ -1,13 +1,58 @@
 $(function() {
-	  $(".my-rating").starRating({
+	  $(".my-rating-1").starRating({
+		starSize: 20,
+		initialRating: 1,
+		readOnly: true,
+		starShape: 'straight',
+		//starShape: 'rounded',
+		emptyColor: 'rgba(0, 0, 0, 0.1)',
+		activeColor: 'white',
+		useGradient: false,
+		strokeWidth: 0,
+	  }),
+		$(".my-rating-2").starRating({
+		starSize: 20,
+		initialRating: 2,
+		readOnly: true,
+		starShape: 'straight',
+		//starShape: 'rounded',
+		emptyColor: 'rgba(0, 0, 0, 0.1)',
+		activeColor: 'white',
+		useGradient: false,
+		strokeWidth: 0,
+	  }),
+		  $(".my-rating-3").starRating({
+		starSize: 20,
+		initialRating: 3,
+		readOnly: true,
+		starShape: 'straight',
+		//starShape: 'rounded',
+		emptyColor: 'rgba(0, 0, 0, 0.1)',
+		activeColor: 'white',
+		useGradient: false,
+		strokeWidth: 0,
+	  }),
+		  $(".my-rating-4").starRating({
 		starSize: 20,
 		initialRating: 4,
 		readOnly: true,
 		starShape: 'straight',
 		//starShape: 'rounded',
-		emptyColor: 'rgba(255, 255, 255, 0.3)',
+		emptyColor: 'rgba(0, 0, 0, 0.1)',
+		activeColor: 'white',
+		useGradient: false,
+		strokeWidth: 0,
+	  }),
+		  $(".my-rating-5").starRating({
+		starSize: 20,
+		initialRating: 5,
+		readOnly: true,
+		starShape: 'straight',
+		//starShape: 'rounded',
+		emptyColor: 'rgba(0, 0, 0, 0.1)',
 		activeColor: 'white',
 		useGradient: false,
 		strokeWidth: 0,
 	  });
-	});
+	
+});
