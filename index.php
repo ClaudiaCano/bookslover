@@ -8,6 +8,8 @@ include "./php/bestsellers.php";
     <!-- Meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content='¿Eres booklover? Entonces este es tu sitio'></head>
+	<link rel="icon" type="image/png" href="img/icon.png">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -20,8 +22,7 @@ include "./php/bestsellers.php";
 	<link rel="stylesheet" href="css/flickity.css" media="screen">
 	<link rel="stylesheet" href="css/home.css">
 	<link rel="stylesheet" href="css/style.css">
- 
-	<!-- API key AIzaSyC9vti0RfcMWmz6j5Dhu1waCSTe1f3qbEM -->
+
     <title>bookslover</title>
   </head>
   <body>
@@ -43,7 +44,9 @@ include "./php/bestsellers.php";
 		  <div id="card_1" class="carousel-cell p-3">
 		  	<div class="row align-items-center mb-0">
 				<div class="col-4">
-					<img class="img-fluid cover" src="<?php echo $book1['volumeInfo']['imageLinks']['thumbnail']?>" >
+					<a href="books/?id=<?php echo $book1['id']?>">
+						<img class="img-fluid cover" src="<?php echo $book1['volumeInfo']['imageLinks']['thumbnail']?>" >
+					</a>
 				</div>
 				<div class="col-8 info">
 					<div class="row mt-3" style="height: 50%;">
@@ -64,7 +67,9 @@ include "./php/bestsellers.php";
 		  <div id="card_2" class="carousel-cell p-3">
 		  	<div class="row">
 				<div class="col-4">
-					<img class="img-fluid cover" src="<?php echo $book2['volumeInfo']['imageLinks']['thumbnail']?>" >
+					<a href="books/?id=<?php echo $book2['id']?>">
+						<img class="img-fluid cover" src="<?php echo $book2['volumeInfo']['imageLinks']['thumbnail']?>" >
+					</a>
 				</div>
 				<div class="col-8 info">
 					<div class="row mt-3" style="height: 50%;">
@@ -85,7 +90,9 @@ include "./php/bestsellers.php";
 			<div id="card_3" class="carousel-cell p-3">
 		  	<div class="row">
 				<div class="col-4">
-					<img class="img-fluid cover" src="<?php echo $book3['volumeInfo']['imageLinks']['thumbnail']?>" >
+					<a href="books/?id=<?php echo $book3['id']?>">
+						<img class="img-fluid cover" src="<?php echo $book3['volumeInfo']['imageLinks']['thumbnail']?>" >
+					</a>
 				</div>
 				<div class="col-8 info">
 					<div class="row mt-3" style="height: 50%;">
@@ -106,7 +113,9 @@ include "./php/bestsellers.php";
 			<div id="card_4" class="carousel-cell p-3">
 		  	<div class="row">
 				<div class="col-4">
-					<img class="img-fluid cover" src="<?php echo $book4['volumeInfo']['imageLinks']['thumbnail']?>" >
+					<a href="books/?id=<?php echo $book4['id']?>">
+						<img class="img-fluid cover" src="<?php echo $book4['volumeInfo']['imageLinks']['thumbnail']?>" >
+					</a>
 				</div>
 				<div class="col-8 info">
 					<div class="row mt-3" style="height: 50%;">
@@ -127,7 +136,9 @@ include "./php/bestsellers.php";
 			<div id="card_5" class="carousel-cell p-3">
 		  	<div class="row">
 				<div class="col-4">
-					<img class="img-fluid cover" src="<?php echo $book5['volumeInfo']['imageLinks']['thumbnail']?>" >
+					<a href="books/?id=<?php echo $book5['id']?>">
+						<img class="img-fluid cover" src="<?php echo $book5['volumeInfo']['imageLinks']['thumbnail']?>" >
+					</a>
 				</div>
 				<div class="col-8 info">
 					<div class="row mt-3" style="height: 50%;">
@@ -148,7 +159,9 @@ include "./php/bestsellers.php";
 			<div id="card_6" class="carousel-cell p-3">
 		  	<div class="row">
 				<div class="col-4">
-					<img class="img-fluid cover" src="<?php echo $book6['volumeInfo']['imageLinks']['thumbnail']?>" >
+					<a href="books/?id=<?php echo $book6['id']?>">
+						<img class="img-fluid cover" src="<?php echo $book6['volumeInfo']['imageLinks']['thumbnail']?>" >
+					</a>
 				</div>
 				<div class="col-8 info">
 					<div class="row mt-3" style="height: 50%;">

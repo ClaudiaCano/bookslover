@@ -27,7 +27,7 @@ a{
 	background: -webkit-linear-gradient(left, #850EFE, #3DECCA);
 	background: linear-gradient(to right, #850EFE, #3DECCA);
 	-webkit-background-clip: text;  
-  -webkit-text-fill-color: transparent;
+	-webkit-text-fill-color: transparent;
 }
 
 a:hover{
