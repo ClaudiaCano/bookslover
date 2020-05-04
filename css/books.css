@@ -1,6 +1,40 @@
 @charset "utf-8";
 /* CSS Document */
 
+.navbar{
+	background-color: white;
+}
+
 .container{
 	box-shadow: 10px 8px 16px rgba(0, 0, 0, 0.3);
+	padding: 30px 30px 100px 30px;
+	background-color: white;
+}
+
+h1{
+	font-size: 2.6rem;
+}
+
+h2{
+	font-size: 2rem;
+	font-weight: 300;
+}
+
+h3{
+	font-size: 1.6rem;
+	font-weight: 300;
+}
+
+.cover{
+	width: 80%;
+	height: auto;
+}
+
+.precio1{
+	text-decoration: line-through;
+	color:lightslategray;
+}
+
+.precio2{
+	font-weight: 600;
 }

@@ -22,24 +22,38 @@ include "./php/bestsellers.php";
 	<link rel="stylesheet" href="css/flickity.css" media="screen">
 	<link rel="stylesheet" href="css/home.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/footer.css">
 
     <title>bookslover</title>
   </head>
   <body>
 	  
-<nav class="navbar">
-  <a class="navbar-brand" href=""><img id="navbar-logo" src="img/bookslover_1_max.png"></a>
+<div id="bg">
+	<img src="img/background.png"  alt=""> 
+</div> 
+<div id="container">
+	<nav class="navbar">
+  <a class="navbar-brand" href=""><img id="navbar-logo" src="img/bookslover_white.png"></a>
+		<ul class="nav justify-content-center">
+	  <li class="nav-item">
+		<a href=""><img id="search" src="img/lupa.png" alt="buscar"></a>
+	  </li>
+	</ul>
 	<ul class="nav justify-content-end">
-  <li class="nav-item">
-    <button class="btn btn-sm btn-outline-secondary" type="button"><?php echo $nav_login?></button>
-  </li>
+	  <li class="nav-item">
+		<button class="btn-navbar btn-sm btn-outline-secondary" type="button"><?php echo $nav_login?></button>
+	  </li>
 	</ul>
 </nav>
-	  
-<div id="container" class="mt-5">
-  <div class="row mb-5">
+	<div class="row">
+		<div id="slogan" class="col-12 mt-5 mb-5 mr-0 ml-0">
+			<h1>Lorem ipsum dolor sit</h1>
+			<h3>Lorem ipsum dolor sit amet consectetur adipiscing elit consequat eleifend lectus sapien venenatis at malesuada, velit congue gravida vel primis curabitur posuere eget quisque aenean pretium quis molestie.</h3>
+		</div>
+	</div>
+  <div class="row  mt-5 mb-5">
     <div class="col-12">
-      <h1><?php echo $home_titulo_slider?></h1>
+      <h1 id="best"><?php echo $home_titulo_slider?></h1>
 		<div class="carousel" data-flickity='{"cellAlign": "left", "prevNextButtons": false, "pageDots": false}'>
 		  <div id="card_1" class="carousel-cell p-3">
 		  	<div class="row align-items-center mb-0">
@@ -57,7 +71,7 @@ include "./php/bestsellers.php";
 					</div>
 					<div class="row align-items-end" style="height: 50%; margin-top: -2rem;">
 						<div class="col ">
-							<p class="mb-0"><?php echo $book1['saleInfo']['listPrice']["amount"]." €"?></p>
+							<p class="mb-0"><?php echo $book1['saleInfo']['retailPrice']["amount"]." €"?></p>
 							<div class="my-rating-4 no-action"></div>			
 						</div>
 					</div>
@@ -182,7 +196,7 @@ include "./php/bestsellers.php";
 		</div>
 	</div>
   </div>
-  <div class="row">
+  <div class="row mt-5">
     <div class="col-8">
       <h1><?php echo $home_titulo_izquierda?><a href=""><small class="xs"><?php echo $ver_mas?></small></a></h1>
     </div>
@@ -190,9 +204,11 @@ include "./php/bestsellers.php";
       <h1><?php echo $home_titulo_derecha?><a href=""><small class="xs"><?php echo $ver_mas?></small></a></h1>
     </div>
   </div>
+	
+	  <?php 
+	  	include "footer.php"
+	  ?>
 </div>
-
-
 
 	<!-- The core Firebase JS SDK is always required and must be listed first -->
 	<script src="/__/firebase/7.13.2/firebase-app.js"></script>

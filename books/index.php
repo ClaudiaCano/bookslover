@@ -26,14 +26,16 @@ $book = json_decode( file_get_contents($QUERY), true );
 	<link rel="stylesheet" href="../css/star-rating-svg.css" type="text/css" >
 	
 	<!-- CSS -->
-	<link rel="stylesheet" href="../css/books.css">
+	<link rel="stylesheet" href="../css/backgroundBook.php?id=<?php echo $id = $_GET['id'];?>">
 	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/books.css">
  
-	<!-- API key AIzaSyC9vti0RfcMWmz6j5Dhu1waCSTe1f3qbEM -->
     <title>bookslover</title>
   </head>
 
 <body>
+<div class="page-bg">
+</div>
 	<nav class="navbar">
   		<a class="navbar-brand" href="../"><img id="navbar-logo" src="../img/bookslover_1_max.png"></a>
 		<ul class="nav justify-content-end">
@@ -46,10 +48,43 @@ $book = json_decode( file_get_contents($QUERY), true );
 	<div class="container mt-5">
 		<div class="row">
 			<div class="col-3">
+				<img class="img-fluid cover mx-auto d-block" src="<?php echo $book['volumeInfo']['imageLinks']['thumbnail']?>" >
 			</div>
 			<div class="col-9">
-				<h1><?php echo $book['volumeInfo']['title']?></h1>
-				<h2><?php echo $book['volumeInfo']['authors'][0]?></h2>
+				<div class="row">
+					<div class="col-12">						
+					<h1><?php echo $book['volumeInfo']['title']?></h1>
+					<h3><?php echo $book['volumeInfo']['authors'][0]?></h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-6">
+						
+					</div>
+					<div class="col-6">
+						<span class="precio1 float-right align-self-end"><?php echo $book['saleInfo']['listPrice']["amount"]." €"?></span><br>
+						<span class="precio2 float-right align-self-end"><?php echo $book['saleInfo']['retailPrice']["amount"]." €"?></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row mt-5">
+			<div class="col-12">
+				<h2><?php echo $book_descripcion?></h2>
+				<p><?php echo $book['volumeInfo']['description']?></p>
+			</div>
+		</div>
+		<div class="row mt-5">
+			<div class="col-12">
+				<h2><?php echo $book_detalles?></h2>
+				<ul>
+					<li>Fecha publicación: <?php echo $book['volumeInfo']['publishedDate']?></li>
+					<li>Editor: <?php echo $book['volumeInfo']['publisher']?></li>
+					<li>Paginas: <?php echo $book['volumeInfo']['pageCount']?></li>
+					<li>ISBN-10: <?php echo $book['volumeInfo']['industryIdentifiers'][0]['identifier']?></li>
+					<li>ISBN-13: <?php echo $book['volumeInfo']['industryIdentifiers'][1]['identifier']?></li>
+					<li>Categoría: <?php echo $book['volumeInfo']['categories'][0]?></li>
+				</ul>
 			</div>
 		</div>
 	</div>

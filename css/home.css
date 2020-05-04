@@ -9,9 +9,32 @@
 	--sombra-text: 0px 1px 13px rgba(0, 0, 0, 0.6);
 }
 
-#container{
-	padding-left: 10rem;
-	padding-right: 10rem;
+#bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+#bg img {
+	position:inherit;
+	background-size: cover;
+}
+
+h1#best{
+	font-family: 'Playfair Display', serif;
+	font-size: 2rem;
+	font-weight: 500;
+	font-stretch: extra-expanded;
+	color: white;
+}
+
+#slogan{
+	color: white;
+	text-align: center;
+	padding: 5rem 10rem;
 }
 
 .carousel-cell h2{
