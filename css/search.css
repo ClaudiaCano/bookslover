@@ -1,0 +1,72 @@
+/* CSS Document */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900|Playfair+Display:400,500,700,800,900&display=swap');
+
+
+h1#search_title{
+	color: white;
+}
+
+h4#search_sub{
+	color: white;
+	font-weight: 200;
+}
+
+span{
+	color: #3DECCA;
+	font-family: "Montserrat";
+	font-weight: 200;
+	font-size: 2.4rem;
+	font-stretch: ultra-condensed;
+}
+
+a, a:link, a:visited {
+  color: #4D4D4D;
+  text-decoration: none;
+}
+
+h3{
+	color: #4D4D4D !important;
+}
+
+.card {
+	width: 100%;
+	height: 300px;
+	background: none;
+	border: none;
+	border-radius: 16px;
+	box-shadow:none;
+	padding: 0;
+	margin: 2rem 0 0 0;
+}
+
+.cover{
+	height: 300px;
+	width: auto;
+	position: absolute;
+	margin-right: 0;
+}
+
+.card_background{
+	position: absolute;
+	top: 20px;
+	right: 0;
+	padding-top: 5rem;
+	padding-left: 45%;
+	padding-right: 1rem;
+	width: 100%;
+	height: 260px;
+	background: white;
+	border-color: white;
+	border-radius: 16px;
+	box-shadow: 10px 8px 16px rgba(0, 0, 0, 0.3);
+	margin: 0;
+	z-index: -1;
+}
+
+h3.card-title{
+	color: #4D4D4D !important;
+	font-family: 'Playfair Display', serif;
+	font-size: 1.5rem;
+	font-weight: 500;
+	font-stretch: extra-expanded;
+}

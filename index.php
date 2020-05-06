@@ -35,23 +35,26 @@ include "./php/bestsellers.php";
 	<nav class="navbar">
   <a class="navbar-brand" href=""><img id="navbar-logo" src="img/bookslover_white.png"></a>
 		<ul class="nav justify-content-center">
-	  <li class="nav-item">
-		<a href=""><img id="search" src="img/lupa.png" alt="buscar"></a>
-	  </li>
-	</ul>
+		  <div id="wrap">
+			<form target="" action="./search" autocomplete="off" method="get">
+				<input id="search" name="q" type="text" placeholder="¿Qué buscas?"><input id="search_submit" value="Buscar" type="submit">
+			</form>
+		  </div>
+		</ul>
 	<ul class="nav justify-content-end">
 	  <li class="nav-item">
 		<button class="btn-navbar btn-sm btn-outline-secondary" type="button"><?php echo $nav_login?></button>
 	  </li>
 	</ul>
 </nav>
-	<div class="row">
+	
+	<div class="row myrow">
 		<div id="slogan" class="col-12 mt-5 mb-5 mr-0 ml-0">
-			<h1>Lorem ipsum dolor sit</h1>
-			<h3>Lorem ipsum dolor sit amet consectetur adipiscing elit consequat eleifend lectus sapien venenatis at malesuada, velit congue gravida vel primis curabitur posuere eget quisque aenean pretium quis molestie.</h3>
+			<h1>viaja, descubre, vive, ama...</h1>
+			<h3>Todos tus libros, incluso los que aún no sabes que formarán parte de ti, en un solo sitio. <br>Todas tus vidas, experiencias, amores y conocimientos te estan buscando. <br>¿A qué esperas?</h3>
 		</div>
 	</div>
-  <div class="row  mt-5 mb-5">
+  <div class="row myrow">
     <div class="col-12">
       <h1 id="best"><?php echo $home_titulo_slider?></h1>
 		<div class="carousel" data-flickity='{"cellAlign": "left", "prevNextButtons": false, "pageDots": false}'>
@@ -79,7 +82,7 @@ include "./php/bestsellers.php";
 			</div>
 		  </div>
 		  <div id="card_2" class="carousel-cell p-3">
-		  	<div class="row">
+		  	<div class="row align-items-center mb-0">
 				<div class="col-4">
 					<a href="books/?id=<?php echo $book2['id']?>">
 						<img class="img-fluid cover" src="<?php echo $book2['volumeInfo']['imageLinks']['thumbnail']?>" >
@@ -102,7 +105,7 @@ include "./php/bestsellers.php";
 			</div>
 		  </div>
 			<div id="card_3" class="carousel-cell p-3">
-		  	<div class="row">
+		  	<div class="row align-items-center mb-0">
 				<div class="col-4">
 					<a href="books/?id=<?php echo $book3['id']?>">
 						<img class="img-fluid cover" src="<?php echo $book3['volumeInfo']['imageLinks']['thumbnail']?>" >
@@ -125,7 +128,7 @@ include "./php/bestsellers.php";
 			</div>
 		  </div>
 			<div id="card_4" class="carousel-cell p-3">
-		  	<div class="row">
+		  	<div class="row align-items-center mb-0">
 				<div class="col-4">
 					<a href="books/?id=<?php echo $book4['id']?>">
 						<img class="img-fluid cover" src="<?php echo $book4['volumeInfo']['imageLinks']['thumbnail']?>" >
@@ -148,7 +151,7 @@ include "./php/bestsellers.php";
 			</div>
 		  </div>
 			<div id="card_5" class="carousel-cell p-3">
-		  	<div class="row">
+		  	<div class="row align-items-center mb-0">
 				<div class="col-4">
 					<a href="books/?id=<?php echo $book5['id']?>">
 						<img class="img-fluid cover" src="<?php echo $book5['volumeInfo']['imageLinks']['thumbnail']?>" >
@@ -171,7 +174,7 @@ include "./php/bestsellers.php";
 			</div>
 		  </div>
 			<div id="card_6" class="carousel-cell p-3">
-		  	<div class="row">
+		  	<div class="row align-items-center mb-0">
 				<div class="col-4">
 					<a href="books/?id=<?php echo $book6['id']?>">
 						<img class="img-fluid cover" src="<?php echo $book6['volumeInfo']['imageLinks']['thumbnail']?>" >
@@ -196,7 +199,7 @@ include "./php/bestsellers.php";
 		</div>
 	</div>
   </div>
-  <div class="row mt-5">
+  <div class="row mt-6">
     <div class="col-8">
       <h1><?php echo $home_titulo_izquierda?><a href=""><small class="xs"><?php echo $ver_mas?></small></a></h1>
     </div>
@@ -209,16 +212,6 @@ include "./php/bestsellers.php";
 	  	include "footer.php"
 	  ?>
 </div>
-
-	<!-- The core Firebase JS SDK is always required and must be listed first -->
-	<script src="/__/firebase/7.13.2/firebase-app.js"></script>
-
-	<!-- TODO: Add SDKs for Firebase products that you want to use
-		 https://firebase.google.com/docs/web/setup#available-libraries -->
-	<script src="/__/firebase/7.13.2/firebase-analytics.js"></script>
-
-	<!-- Initialize Firebase -->
-	<script src="/__/firebase/init.js"></script>
 	  
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
