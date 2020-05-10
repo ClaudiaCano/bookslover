@@ -33,7 +33,7 @@ include "./php/bestsellers.php";
 </div> 
 <div id="container">
 	<nav class="navbar">
-  <a class="navbar-brand" href=""><img id="navbar-logo" src="img/bookslover_white.png"></a>
+  		<a class="navbar-brand" href=""><img id="navbar-logo" src="img/bookslover_white.png"></a>
 		<ul class="nav justify-content-center">
 		  <div id="wrap">
 			<form target="" action="./search" autocomplete="off" method="get">
@@ -41,12 +41,12 @@ include "./php/bestsellers.php";
 			</form>
 		  </div>
 		</ul>
-	<ul class="nav justify-content-end">
-	  <li class="nav-item">
-		<button class="btn-navbar btn-sm btn-outline-secondary" type="button"><?php echo $nav_login?></button>
-	  </li>
-	</ul>
-</nav>
+		<ul class="nav justify-content-end">
+		  <li class="nav-item">
+			<button class="btn-navbar btn-sm btn-outline-secondary" type="button"><?php echo $nav_login?></button>
+		  </li>
+		</ul>
+	</nav>
 	
 	<div class="row myrow">
 		<div id="slogan" class="col-12 mt-5 mb-5 mr-0 ml-0">

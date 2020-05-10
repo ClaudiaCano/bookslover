@@ -15,7 +15,7 @@ $book = json_decode( file_get_contents($QUERY), true );
     <!-- Meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">	
-	<meta name="description" content="<?php echo $book['volumeInfo']['title']?> - bookslover"></head>	
+	<meta name="title" content="<?php echo $book['volumeInfo']['title']?> - bookslover"></head>	
 	<link rel="icon" type="image/png" href="../img/icon.png">
 
     <!-- Bootstrap CSS -->
@@ -30,65 +30,75 @@ $book = json_decode( file_get_contents($QUERY), true );
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/books.css">
  
-    <title>bookslover</title>
+    <title><?php echo $book['volumeInfo']['title']?> - bookslover</title>
   </head>
 
 <body>
-<div class="page-bg">
-</div>
+<div class="page-bg"> </div>
+<div class="degradado"> </div>	
+	<div id="container">
 	<nav class="navbar">
-  		<a class="navbar-brand" href="../"><img id="navbar-logo" src="../img/bookslover_1_max.png"></a>
+  		<a class="navbar-brand" href="../"><img id="navbar-logo" src="../img/bookslover_white.png"></a>
+		<ul class="nav justify-content-center">
+		  <div id="wrap">
+			<form target="" action="./search" autocomplete="off" method="get">
+				<input id="search" name="q" type="text" placeholder="¿Qué buscas?"><input id="search_submit" value="Buscar" type="submit">
+			</form>
+		  </div>
+		</ul>
 		<ul class="nav justify-content-end">
 		  <li class="nav-item">
-			<button class="btn btn-sm btn-outline-secondary" type="button"><?php echo $nav_login?></button>
+			<button class="btn-navbar btn-sm btn-outline-secondary" type="button"><?php echo $nav_login?></button>
 		  </li>
 		</ul>
 	</nav>
 	
-	<div class="container mt-5">
-		<div class="row">
-			<div class="col-3">
-				<img class="img-fluid cover mx-auto d-block" src="<?php echo $book['volumeInfo']['imageLinks']['thumbnail']?>" >
+	<div class="card header">
+			<div>
+				<img class="card-img" src="<?php echo $book['volumeInfo']['imageLinks']['thumbnail']?>" alt="portada">
 			</div>
-			<div class="col-9">
-				<div class="row">
-					<div class="col-12">						
+			<div class="title d-flex flex-column align-items-stretch">
+				<div class="mb-auto">
 					<h1><?php echo $book['volumeInfo']['title']?></h1>
 					<h3><?php echo $book['volumeInfo']['authors'][0]?></h3>
-					</div>
 				</div>
-				<div class="row">
-					<div class="col-6">
-						
-					</div>
-					<div class="col-6">
-						<span class="precio1 float-right align-self-end"><?php echo $book['saleInfo']['listPrice']["amount"]." €"?></span><br>
-						<span class="precio2 float-right align-self-end"><?php echo $book['saleInfo']['retailPrice']["amount"]." €"?></span>
-					</div>
+				<div class="">
+					<?php if(isset($book['saleInfo']['listPrice']["amount"], $book['saleInfo']['retailPrice']["amount"])){
+							echo 	'<button class="btn btn-outline-secondary float-right">
+										<span class="precio1 mr-4">'.$book['saleInfo']['listPrice']["amount"].'€</span> eBook
+										<span class="precio2 ">'.$book['saleInfo']['retailPrice']["amount"].'€</span>
+									</button>';
+							}else if(isset($book['saleInfo']['listPrice']["amount"])){
+							echo 	'<button class="btn btn-outline-secondary float-right">
+										eBook <span class="precio2 ">'.$book['saleInfo']['retailPrice']["amount"].'€</span>
+									</button>';
+							}else{
+								echo '<button class="btn btn-outline disabled float-right" disabled>No disponible actualmente</button>';
+							}
+					?>
 				</div>
 			</div>
-		</div>
+	</div>
+	<div class="details">
 		<div class="row mt-5">
-			<div class="col-12">
+			<div class="col-9 pr-5 text-justify">
 				<h2><?php echo $book_descripcion?></h2>
 				<p><?php echo $book['volumeInfo']['description']?></p>
 			</div>
-		</div>
-		<div class="row mt-5">
-			<div class="col-12">
+			<div class="col-3">
 				<h2><?php echo $book_detalles?></h2>
 				<ul>
-					<li>Fecha publicación: <?php echo $book['volumeInfo']['publishedDate']?></li>
-					<li>Editor: <?php echo $book['volumeInfo']['publisher']?></li>
-					<li>Paginas: <?php echo $book['volumeInfo']['pageCount']?></li>
-					<li>ISBN-10: <?php echo $book['volumeInfo']['industryIdentifiers'][0]['identifier']?></li>
-					<li>ISBN-13: <?php echo $book['volumeInfo']['industryIdentifiers'][1]['identifier']?></li>
-					<li>Categoría: <?php echo $book['volumeInfo']['categories'][0]?></li>
+					<li><span class="font-weight-bolder">Fecha publicación </span><?php echo $book['volumeInfo']['publishedDate']?></li>
+					<li><span class="font-weight-bolder">Editor </span> <?php echo $book['volumeInfo']['publisher']?></li>
+					<li><span class="font-weight-bolder">Paginas </span> <?php echo $book['volumeInfo']['pageCount']?></li>
+					<li><span class="font-weight-bolder">ISBN-10 </span> <?php echo $book['volumeInfo']['industryIdentifiers'][0]['identifier']?></li>
+					<li><span class="font-weight-bolder">ISBN-13 </span> <?php echo $book['volumeInfo']['industryIdentifiers'][1]['identifier']?></li>
+					<li><span class="font-weight-bolder">Categoría </span> <?php echo $book['volumeInfo']['categories'][0]?></li>
 				</ul>
 			</div>
 		</div>
 	</div>
-	
+</div>
 	
 	  
     <!-- Optional JavaScript -->
