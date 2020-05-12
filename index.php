@@ -2,6 +2,7 @@
 <?php
 include 'php/es.php';
 include "./php/bestsellers.php";
+session_start();
 ?>
 <html lang="es">
 
@@ -45,9 +46,19 @@ include "./php/bestsellers.php";
 				</div>
 			</ul>
 			<ul class="nav justify-content-end">
-				<li class="nav-item mr-2">
-					<button class="btn-navbar btn-sm btn-outline-secondary" type="button" onclick="window.location.href='login/';"><?php echo $nav_login ?></button>
-				</li>
+				<?php if (isset($_SESSION["id"])) {
+					echo '<li class="nav-item mr-2">
+							<button id="perfil" class="btn-navbar btn-sm btn-outline-secondary" onclick="window.location.href=' . "'profile/'" . '">
+								<img src="img/user.png" class="align-text-top" width="20">
+								<span id="nom-user">' . $_SESSION["nom"] . '</span>
+							</button>
+						</li>';
+				} else {
+					echo '<li class="nav-item mr-2">
+						<button class="btn-navbar btn-sm btn-outline-secondary" type="button" onclick=""><?php echo $nav_login ?></button>
+					</li>';
+				}
+				?>
 				<li class="nav-item">
 					<button id="carrito" class="btn-navbar btn-sm btn-outline-secondary" onclick="">
 						<img src="img/compra.png" class="align-text-top" width="20">
@@ -230,7 +241,7 @@ include "./php/bestsellers.php";
 	<script src="js/flickity.pkgd.min.js"></script>
 	<script src="js/jquery.star-rating-svg.js"></script>
 	<script src="js/my-rating.js"></script>.
-	<script src="../js/carrito.js" type="text/javascript"></script>
+	<script src="js/carrito.js" type="text/javascript"></script>
 </body>
 
 </html>

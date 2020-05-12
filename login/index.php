@@ -31,12 +31,12 @@ include '../php/es.php';
                     <a class="text-center mt-5 mb-5" href="../">
                         <img id="logo" src="../img/bookslover_1_max.png" alt="bookslover">
                     </a>
-                    <form class="form-signin mt-5 mb-5">
+                    <form class="form-signin mt-5 mb-5" action="../php/login.php" method="POST">
                         <h1 class="h3 mb-3 font-weight-normal">¿qué tal?</h1>
                         <label for="inputEmail" class="sr-only">email</label>
-                        <input type="email" id="inputEmail" class="form-control" placeholder="email" required autofocus>
+                        <input type="email" id="inputEmail" name="email" class="form-control" placeholder="email" required autofocus>
                         <label for="inputPassword" class="sr-only">contraseña</label>
-                        <input type="password" id="inputPassword" class="form-control" placeholder="contraseña" required>
+                        <input type="password" id="inputPassword" name="pass" class="form-control" placeholder="contraseña" required>
                         <button class="btn btn-lg btn-primary btn-block mt-5" type="submit">iniciar sesión</button>
                     </form>
                     <div class="d-flex flex-row text-center mt-5">

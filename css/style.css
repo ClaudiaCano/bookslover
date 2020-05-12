@@ -67,10 +67,20 @@ a.animation:hover {
 	background: white;
 }
 
+button#perfil {
+	border: solid 1px transparent;
+	padding-right: 0;
+}
+
+button#perfil:hover {
+	background: none;
+	border: solid 1px transparent;
+}
+
 button#carrito {
 	border: solid 1px transparent;
-	width: 100px;
-	padding-right: 0;
+	width: 70x;
+    padding-right: 0;
 }
 
 button#carrito:hover {
