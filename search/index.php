@@ -25,10 +25,6 @@ $books = json_decode(file_get_contents($QUERY));
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-<!-- Star Rating SVG -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-<link rel="stylesheet" href="../css/star-rating-svg.css" type="text/css">
-
 <!-- CSS -->
 <link rel="stylesheet" href="../css/flickity.css" media="screen">
 <link rel="stylesheet" href="../css/home.css">
@@ -128,7 +124,7 @@ $books = json_decode(file_get_contents($QUERY));
 		</div>
 
 		<?php
-		include "../footer.php"
+		include $_SERVER['DOCUMENT_ROOT']."/footer.php"
 		?>
 	</div>
 
