@@ -40,9 +40,9 @@ include '../php/es.php';
                         <button class="btn btn-lg btn-primary btn-block mt-5" type="submit">iniciar sesión</button>
                     </form>
                     <div class="d-flex flex-row text-center mt-5">
-                        <div id="iniciar" class="p-3">iniciar sesión</div>
+                        <div id="iniciar" class="p-3">inicia sesión</div>
                         <a id="registrar" href="../signup">
-                            <div  class="p-3">crear tu cuenta</div>
+                            <div  class="p-3">crea tu cuenta</div>
                         </a>
                     </div>
                 </div>

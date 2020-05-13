@@ -16,6 +16,7 @@ body {
     color: var(--color-text);
     background-color: #f5f5f5;
     overflow-x: hidden;
+    min-height: 100vh;
 }
 
 h1 {
@@ -45,7 +46,7 @@ a.animation{
 }
 
 a.animation:hover {
-    animation: fluido 2s ease-in-out infinite;
+    animation: fluid 2s ease-in-out infinite;
     background: -webkit-linear-gradient(left, #850efe, #3decca);
     background: linear-gradient(to right, #850efe, #3decca);
     background-size: 300%;
@@ -73,8 +74,10 @@ button#perfil {
 }
 
 button#perfil:hover {
+    color: white;
 	background: none;
-	border: solid 1px transparent;
+    border: solid 1px transparent;
+    animation: float 2s ease-in-out infinite;
 }
 
 button#carrito {
@@ -85,7 +88,8 @@ button#carrito {
 
 button#carrito:hover {
 	background: none;
-	border: solid 1px transparent;
+    border: solid 1px transparent;
+    animation: float 2s ease-in-out infinite;
 }
 
 span#num-items {
@@ -198,18 +202,6 @@ span#num-items {
     padding-right: 10rem;
 }
 
-@keyframes fluido {
-    0% {
-        background-position: 0 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0 50%;
-    }
-}
-
 /*---------------------- SEARCH ----------------------*/
 #wrap {
     display: inline-block;
@@ -267,4 +259,55 @@ input[type="submit"] {
 }
 input[type="submit"]:hover {
     opacity: 1;
+}
+
+/*---------------------- ANIMATIONS ----------------------*/
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-6px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+@keyframes fluid {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+/*---------------------- SCROLLBAR ----------------------*/
+body::-webkit-scrollbar {
+    width: 13px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #ccc;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #666666;
+}
+
+body::-webkit-scrollbar-thumb:active {
+    background-color: #131313;
+}
+
+body::-webkit-scrollbar-track {
+    background: #ececec;
+}
+
+body::-webkit-scrollbar-track:hover,
+body::-webkit-scrollbar-track:active {
+  background: #d4d4d4;
 }

@@ -1,6 +1,7 @@
 <!doctype html>
 <?php
 include '../php/es.php';
+session_start();
 $id = $_GET['id'];
 
 $API_KEY = "?key=AIzaSyCzjstMcn7zGdz14O11DxoQEKOkBkdkeUg";
@@ -30,6 +31,7 @@ $book = json_decode(file_get_contents($QUERY), true);
 <!-- CSS -->
 <link rel="stylesheet" href="../css/backgroundBook.php?id=<?php echo $id = $_GET['id']; ?>">
 <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/footer.css">
 <link rel="stylesheet" href="../css/books.css">
 
 <title><?php echo $book['volumeInfo']['title'] ?> - bookslover</title>
@@ -49,9 +51,19 @@ $book = json_decode(file_get_contents($QUERY), true);
 				</div>
 			</ul>
 			<ul class="nav justify-content-end">
-				<li class="nav-item">
-					<button class="btn-navbar btn-sm btn-outline-secondary" type="button"><?php echo $nav_login ?></button>
-				</li>
+				<?php if (isset($_SESSION["id"])) {
+					echo '<li class="nav-item mr-2">
+							<button id="perfil" class="btn-navbar btn-sm btn-outline-secondary" onclick="">
+								<img src="../img/user.png" class="align-text-top" width="20">
+								<span id="nom-user">' . $_SESSION["nom"] . '</span>
+							</button>
+						</li>';
+				} else {
+					echo '<li class="nav-item mr-2">
+						<button class="btn-navbar btn-sm btn-outline-secondary" type="button" onclick="window.location.href=' . "'../login/'" . '">'.$nav_login.'</button>
+					</li>';
+				}
+				?>
 				<li class="nav-item">
 					<button id="carrito" class="btn-navbar btn-sm btn-outline-secondary" onclick="">
 						<img src="../img/compra.png" class="align-text-top" width="20">
@@ -95,7 +107,7 @@ $book = json_decode(file_get_contents($QUERY), true);
 			<div class="row mt-5">
 				<div class="col-9 pr-5 text-justify">
 					<h2><?php echo $book_descripcion ?></h2>
-					<p><?php echo $book['volumeInfo']['description'] ?></p>
+					<?php echo $book['volumeInfo']['description'] ?>
 				</div>
 				<div class="col-3">
 					<h2><?php echo $book_detalles ?></h2>
@@ -111,8 +123,9 @@ $book = json_decode(file_get_contents($QUERY), true);
 			</div>
 		</div>
 	</div>
-
-
+	<?php
+        include "../footer.php"
+    ?>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

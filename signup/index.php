@@ -43,9 +43,9 @@ include '../php/es.php';
                     </form>
                     <div class="d-flex flex-row text-center mt-5">
                         <a id="iniciar" href="../login">
-                            <div class="p-3">iniciar sesión</div>
+                            <div class="p-3">inicia sesión</div>
                         </a>
-                        <div id="registrar" class="p-3">crear tu cuenta</div>
+                        <div id="registrar" class="p-3">crea tu cuenta</div>
                     </div>
                 </div>
             </div>

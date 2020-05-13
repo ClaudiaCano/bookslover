@@ -5,7 +5,6 @@ include "./php/bestsellers.php";
 session_start();
 ?>
 <html lang="es">
-
 <head>
 	<!-- Meta tags -->
 	<meta charset="utf-8">
@@ -48,14 +47,14 @@ session_start();
 			<ul class="nav justify-content-end">
 				<?php if (isset($_SESSION["id"])) {
 					echo '<li class="nav-item mr-2">
-							<button id="perfil" class="btn-navbar btn-sm btn-outline-secondary" onclick="window.location.href=' . "'profile/'" . '">
+							<button id="perfil" class="btn-navbar btn-sm btn-outline-secondary" onclick="">
 								<img src="img/user.png" class="align-text-top" width="20">
 								<span id="nom-user">' . $_SESSION["nom"] . '</span>
 							</button>
 						</li>';
 				} else {
 					echo '<li class="nav-item mr-2">
-						<button class="btn-navbar btn-sm btn-outline-secondary" type="button" onclick=""><?php echo $nav_login ?></button>
+						<button class="btn-navbar btn-sm btn-outline-secondary" type="button" onclick="window.location.href=' . "'login/'" . '">'.$nav_login.'</button>
 					</li>';
 				}
 				?>
@@ -219,20 +218,18 @@ session_start();
 				</div>
 			</div>
 		</div>
-		<div class="row mt-6">
+		<!-- <div class="row mt-6">
 			<div class="col-8">
 				<h1><?php echo $home_titulo_izquierda ?><a class="animation" href=""><small class="xs"><?php echo $ver_mas ?></small></a></h1>
 			</div>
 			<div class="col-4">
 				<h1><?php echo $home_titulo_derecha ?><a class="animation" href=""><small class="xs"><?php echo $ver_mas ?></small></a></h1>
 			</div>
-		</div>
-
-		<?php
+		</div>-->
+	</div>
+	<?php
 		include "footer.php"
 		?>
-	</div>
-
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

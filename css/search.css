@@ -11,7 +11,7 @@ h4#search_sub{
 	font-weight: 200;
 }
 
-span{
+span#query {
 	color: #3DECCA;
 	font-family: "Montserrat";
 	font-weight: 200;
