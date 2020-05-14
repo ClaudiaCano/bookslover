@@ -55,6 +55,7 @@ a.animation:hover {
     -webkit-text-fill-color: transparent;
 }
 
+
 .btn-navbar {
     color: white;
     border: solid 1px white;
@@ -67,6 +68,12 @@ a.animation:hover {
     color: var(--color-lila);
 	background: white;
 }
+
+button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
 
 button#perfil {
 	border: solid 1px transparent;
@@ -239,6 +246,20 @@ span#num-items {
     border-bottom: 1px solid #ac69ff;
     cursor: text;
 }
+
+#search::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+}
+  
+#search:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+}
+  
+#search::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+}
+
 input[type="submit"] {
     height: 30px;
     width: 30px;
