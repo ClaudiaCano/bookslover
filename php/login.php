@@ -45,3 +45,6 @@
         print "Email no registrado";
 		header("location:../login/index.php");
 	}
+
+
+    

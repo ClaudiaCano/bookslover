@@ -1,8 +1,8 @@
 <!doctype html>
 <?php
-include 'php/es.php';
-include "./php/bestsellers.php";
-session_start();
+	include "php/es.php";
+	include "php/bestsellers.php";
+	session_start();
 ?>
 <html lang="es">
 <head>
@@ -69,8 +69,8 @@ session_start();
 
 		<div class="row myrow">
 			<div id="slogan" class="col-12 mt-5 mb-5 mr-0 ml-0">
-				<h1>viaja, descubre, vive, ama...</h1>
-				<h3>Todos tus libros, incluso los que aún no sabes que formarán parte de ti, en un solo sitio. <br>Todas tus vidas, experiencias, amores y conocimientos te estan buscando. <br>¿A qué esperas?</h3>
+				<h1><?php echo $home_titulo_slogan ?></h1>
+				<h3><?php echo $home_texto_slogan ?></h3>
 			</div>
 		</div>
 		<div class="row myrow">

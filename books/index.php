@@ -1,8 +1,12 @@
 <!doctype html>
 <?php
-include '../php/es.php';
+
 session_start();
 $id = $_GET['id'];
+
+include '../php/es.php';
+include '../php/checkListSave.php';
+include '../php/checkListFav.php';
 
 $API_KEY = "?key=AIzaSyCzjstMcn7zGdz14O11DxoQEKOkBkdkeUg";
 $QUERY_0 = "https://www.googleapis.com/books/v1/volumes";
@@ -29,7 +33,7 @@ $book = json_decode(file_get_contents($QUERY), true);
 <link rel="stylesheet" href="../css/star-rating-svg.css" type="text/css">
 
 <!-- CSS -->
-<link rel="stylesheet" href="../css/backgroundBook.php?id=<?php echo $id = $_GET['id']; ?>">
+<link rel="stylesheet" href="../css/backgroundBook.php?id=<?php echo $id; ?>">
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/footer.css">
 <link rel="stylesheet" href="../css/books.css">
@@ -83,9 +87,19 @@ $book = json_decode(file_get_contents($QUERY), true);
 					<h3><?php echo $book['volumeInfo']['authors'][0] ?></h3>
 				</div>
 				<div class="">
-					<div class="d-flex flex-row-reverse">
-						<img id="cor" class="mb-3" src="../img/cor_0.png" width="30" onclick="fav('<?php echo $id ?>')">
-						<img id="guardar" class="mb-3 mr-3" src="../img/guardar_0.png" width="30" onclick="save('<?php echo $id ?>')">
+					<div class="d-flex flex-row-reverse">						
+						<?php 
+						if(isFav($id) == true){
+							echo '<img id="cor" class="mb-3" src="../img/cor_1.png" width="30" onclick="fav(\''.$id.'\')">';
+						}else{
+							echo '<img id="cor" class="mb-3" src="../img/cor_0.png" width="30" onclick="fav(\''.$id.'\')">';
+						} 
+						if(isSave($id) == true){
+							echo '<img id="guardar" class="mb-3 mr-3" src="../img/guardar_1.png" width="30" onclick="save(\''.$id.'\')">';
+						}else{
+							echo '<img id="guardar" class="mb-3 mr-3" src="../img/guardar_0.png" width="30" onclick="save(\''.$id.'\')">';
+						} 
+						?>
 					</div>
 					<?php if (isset($book['saleInfo']['listPrice']["amount"], $book['saleInfo']['retailPrice']["amount"])) {
 						echo 	'<button class="btn btn-outline-secondary float-right" onclick="añadir()">
@@ -128,7 +142,7 @@ $book = json_decode(file_get_contents($QUERY), true);
     ?>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 	<script src="../js/jquery.star-rating-svg.js"></script>
