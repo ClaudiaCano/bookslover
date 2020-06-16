@@ -1,3 +1,74 @@
+:root{
+	--menu-height: 260px;
+	--menu-width: 200px;
+	--border-radius: 6px;
+	--box-shadow: 10px 8px 16px rgba(0, 0, 0, 0.3);;
+  }
+
+div#perfil{
+	width: 80%;
+	margin: auto;
+	margin-top: 6rem;
+}
+
+#submenu{
+	top: 4rem;
+	width: var(--menu-width);
+	border: 0px;
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+	padding: 2rem;
+	z-index: 2;
+}
+
+#submenu ul{
+	margin: 0;
+}
+
+#submenu li{
+	line-height: 2rem;
+}
+
+#submenu li a:hover{
+	color: #850EFE;
+}
+
+#submenu #logout{
+	margin-top: 5rem;
+}
+
+#submenu #logout a{
+	color: tomato;
+}
+
+#submenu #logout a:hover{
+	color: red;
+}
+
+#detalles{
+	bottom: var(--menu-height);
+	width: 95%;
+	left: 5%;
+	border: 0px;
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+	padding-top: 3rem;
+	padding-left: var(--menu-width);
+	padding-bottom: 3rem;
+}
+
+img#user{
+	width: 100%;
+}
+
+#favoritos img, #guardados img{
+	height: 193px;
+	width: 128px;
+	border-radius: 3px;
+	box-shadow: var(--box-shadow);
+	margin-right: 0.7rem;
+}
+
 #bg {
 	position: absolute;
 	top: 0;

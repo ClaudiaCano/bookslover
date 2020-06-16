@@ -82,3 +82,7 @@ ul, li{
 	list-style: none;
 	padding: 0;
 }
+
+#cor:hover, #guardar:hover {
+	cursor: pointer;
+}
