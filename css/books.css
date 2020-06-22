@@ -86,3 +86,80 @@ ul, li{
 #cor:hover, #guardar:hover {
 	cursor: pointer;
 }
+
+#sinopsis{
+	text-align: justify;
+	padding-right: 3rem;
+}
+
+/*---------------------- RESPONSIVE ----------------------*/
+
+/*---------------------- movil ----------------------*/
+@media screen and (max-device-width : 480px) {
+	.header{
+		width: 90%;
+		height: calc(var(--header-height) / 2);
+		margin-top: 3rem;
+	}
+
+	.card-img {
+		height: calc(var(--header-height) / 2);
+		width: 120px;
+	}
+
+	img{
+		object-fit: cover;
+	}
+
+	.title {
+		height: calc(var(--header-height) / 2);
+		padding: 1rem 1rem 1rem 9rem;
+	}
+
+	.details{
+		width: 100%;
+		margin-top: calc(var(--header-height) / 4);
+		padding-top: calc(var(--header-height) / 4);
+		padding-left: 2rem;
+    	padding-right: 2rem;
+    	padding-bottom: 3rem;
+	}
+
+	#sinopsis{
+		text-align: left;
+		padding-right: 2rem;
+		margin-bottom: 1rem;
+	}
+	
+	h1{
+		font-size: 1.4rem;
+	}
+	
+	h2{
+		font-size: 1.3rem;
+		font-weight: 300;
+	}
+	
+	h3{
+		font-size: 1.1rem;
+		font-weight: 300;
+	}
+
+	p{
+		font-size: 0.875rem;
+	}
+
+	.btn{
+		position: absolute;
+		font-size: 0.875rem;
+		top: 185px;
+		width: 80%;
+		left: 10%;
+	}
+
+	.btn.disabled, .btn:disabled:hover {
+		opacity: 1;
+	}
+
+	
+}

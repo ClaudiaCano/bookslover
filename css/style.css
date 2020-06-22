@@ -209,6 +209,11 @@ span#num-items {
     padding-right: 10rem;
 }
 
+.precio{
+    height: 50%; 
+    margin-top: -2rem;
+}
+
 /*---------------------- SEARCH ----------------------*/
 #wrap {
     display: inline-block;
@@ -331,4 +336,123 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-track:hover,
 body::-webkit-scrollbar-track:active {
   background: #d4d4d4;
+}
+#pre-sticky, #sticky{
+    display: none;
+}
+
+/*---------------------- RESPONSIVE ----------------------*/
+
+/*---------------------- movil ----------------------*/
+@media screen and (max-device-width : 480px) {
+
+    body, #bg, #container, #navbar, #row{
+        width: 100% !important;
+        min-width: 100%  !important;
+    }
+
+    #nav-desk{
+        display: none;
+    }
+
+    #pre-sticky{
+        display: block;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        width: 100vw;
+        z-index: 2;
+    }
+
+    #sticky{
+        display: block;
+        position: fixed;
+        bottom: 3vw;
+        height: 60px;
+        width: 94vw;
+        background-color: white;
+        border-radius: 3pt;
+        margin-left: 3vw;
+        padding: 1rem;
+        box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.3);
+    }
+
+    #sticky .btn-navbar {
+        color: var(--color-text);
+    }
+
+    #sticky span#num-items {
+        color: var(--color-text) !important;
+    }
+
+    #wrap input[type="text"]:focus {
+        width: 300px;
+        z-index: 1;
+        border-bottom: 1px solid #ac69ff;
+        cursor: text;
+    }
+
+    #wrap input[type="text"] {
+        padding-top: 60px;
+        padding-bottom: 10px;
+    }
+
+    #container, #navbar, #row{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    #sticky .btn-outline-secondary{
+        border-color: var(--color-text);
+    }
+
+    #sticky button{
+        border: none;
+    }
+
+    button#carrito {
+        padding-right: 30px;
+    }
+
+    #slogan {
+        margin-top: 0 !important;
+        padding: 3rem 2rem;
+    }
+
+    #slogan h1{
+        font-size: 2.2rem;
+    }
+
+    #slogan h3{
+        margin-top: 1.5rem;
+        font-size: 1.5rem;
+    }
+
+    .flickity-viewport {
+        height: 575px !important;
+    }
+
+
+    .flickity-slider {
+        margin-left: 1rem;
+    }
+
+    .carousel-cell {
+        width: 70vw;
+        height: 550px;
+    }
+
+    .precio{
+        margin-top: -3rem;
+    }
+}
+
+/*---------------------- iPad ----------------------*/
+@media screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape){
+    
+}
+
+/*---------------------- monitor pequeño ----------------------*/
+@media screen and (max-width: 800px) {
+    
 }

@@ -1,10 +1,7 @@
-
-var fav = document.getElementById("favoritos");
-var save = document.getElementById("guardados");
-
 window.onload = perfil();
 
-function perfil() {
+function perfil(){
+	$("#detalles").html('<div class="row mb-5"><div class="col-12"><h2>libros favoritos</h2><div id="favoritos" class="mt-3"></div></div></div><div class="row mb-5"><div class="col-12"><h2>libros guardados</h2><div id="guardados" class="mt-3"></div></div></div>');
 
 	$.ajax({
 		data: {},
@@ -35,7 +32,8 @@ function perfil() {
 
 function favoritos(data){
 	//var n = data.length;
-			
+	$("#favoritos").empty();
+	
 	for(var i=0; i<6; i++){
 				
 		$.ajax({
@@ -56,7 +54,8 @@ function favoritos(data){
 
 function guardados(data){
 	//var n = data.length;
-			
+	$("#guardados").empty();
+	
 	for(var i=0; i<6; i++){
 				
 		$.ajax({
@@ -75,18 +74,22 @@ function guardados(data){
 	}
 }
 
-function compras(){
-	$.ajax({
-		data: {"id_libro" : id_libro},
-		url: "../php/perfil.php",
+function compras(e){
+	$("#detalles").empty();
+	$("#detalles").html("<h1>mis compras</h1>");
+
+	/*$.ajax({
+		data: {"id": data[i].id_libro},
+		url: "../php/getCompras.php",
 		method: "post",
-		success: function(data) {
-			detalles.innerHTML(data);		
+		success: function(response) {
+			$("#guardados").append(response);
 		},
-		error: function() {
-			alert("Error al añadir a favoritos");
-		},
-	});
+		error: function(xhr, status, error) {
+			var err = eval("(" + xhr.responseText + ")");
+			alert(xhr.responseText.Message);
+		  },
+	});*/
 }
 
 function logOut(){

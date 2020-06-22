@@ -1,6 +1,9 @@
 /* CSS Document */
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900|Playfair+Display:400,500,700,800,900&display=swap');
 
+body {
+    overflow-x: hidden !important;
+}
 
 h1#search_title{
 	color: white;
@@ -41,9 +44,10 @@ h3{
 
 .cover{
 	height: 300px;
-	width: auto;
+	width: 190px;
 	position: absolute;
 	margin-right: 0;
+	object-fit: cover;
 }
 
 .card_background{
@@ -69,4 +73,39 @@ h3.card-title{
 	font-size: 1.5rem;
 	font-weight: 500;
 	font-stretch: extra-expanded;
+}
+
+/*---------------------- RESPONSIVE ----------------------*/
+
+/*---------------------- movil ----------------------*/
+@media screen and (max-device-width : 480px) {
+	
+	h1{
+		font-size: 2rem;
+	}
+
+	span#query {
+		font-size: 2.1rem;
+		width: 100%;
+	}
+	
+	.card {
+		height: 200px;
+		margin: 0 0 1rem 0;
+	}
+
+	.cover{
+		height: 200px;
+		width: 126px;
+	}
+
+	.card_background{
+		top: 30px;
+		height: 180px;
+		padding-top: 2rem;
+		padding-left: 150px;
+		padding-bottom: 1rem;
+	}
+
+	
 }

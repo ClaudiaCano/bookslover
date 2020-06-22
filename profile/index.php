@@ -28,6 +28,31 @@ include '../php/proteccion.php';
     <div id="bg">
         <img src="../img/background.png" alt="">
     </div>
+    <div id="pre-sticky">
+		<div id="sticky">
+			<ul class="nav justify-content-center">
+				<li class="nav-item">
+					<button id="carrito" class="btn-navbar btn-sm btn-outline-secondary mr-5" onclick="">
+						<img src="../img/compraNav.png" class="align-text-top" width="20">
+						<span id="num-items">0</span>
+					</button>
+				</li>
+				<?php if (isset($_SESSION["id"])) {
+					echo '<li class="nav-item">
+							<button id="perfil" class="btn-navbar btn-sm btn-outline-secondary" onclick="window.location.href=' . "'../profile/'" . '">
+								<img src="../img/userProfile.png" class="align-text-top" width="20">
+								<span id="nom-user">' . $_SESSION["nom"] . '</span>
+							</button>
+						</li>';
+				} else {
+					echo '<li class="nav-item">
+						<button class="btn-navbar btn-sm btn-outline-secondary" type="button" onclick="window.location.href=' . "'../login/'" . '"><img src="img/userProfile.png" class="align-text-top" width="20"></button>
+					</li>';
+				}
+				?>
+			</ul>
+		</div>
+	</div>
     <div id="container">
         <nav class="navbar">
             <a class="navbar-brand" href="../"><img id="navbar-logo" src="../img/bookslover_white.png"></a>
@@ -38,7 +63,7 @@ include '../php/proteccion.php';
                     </form>
                 </div>
             </ul>
-            <ul class="nav justify-content-end">
+            <ul id="nav-desk" class="nav justify-content-end">
                 <?php if (isset($_SESSION["id"])) {
                     echo '<li class="nav-item mr-2">
 							<button id="perfil" class="btn-navbar btn-sm btn-outline-secondary" onclick="window.location.href=' . "''" . '">
@@ -65,41 +90,44 @@ include '../php/proteccion.php';
 
                 <div id="submenu" class="card">
                     <ul>
-                        <li><a href="">mi cuenta</a></li>
-                        <li><a href="">mis compras</a></li>
-                        <li><a href="">configuración</a></li>
-                        <li id="logout"><a href="">cerrar sesión</a></li>
+                        <li><a id="cuenta" href="javascript:perfil()">mi cuenta</a></li>
+                        <li><a  id="compras" href="javascript:compras()">mis compras</a></li>
+                        <li><a href="#">configuración</a></li>
+                        <li id="logout"><a href="../php/logout.php">cerrar sesión</a></li>
                     </ul>
                 </div>
-                <div id="detalles" class="card">
+                <div id="apartado" class="card">
                     <div class="row mb-5">
-                        <div class="col-3 mt-4">
-                            <img id="user" class="img" src="../img/userProfile.png">
-                        </div>
-                        <div class="col-9 my-auto">
-                            <h1><?php echo $_SESSION["nom"]?></h1>
-                            <h3><?php echo $_SESSION["nom"]?></h3>
-                        </div>
+                            <div class="col-lg-3 col-sm-12 mt-4">
+                                <img id="user" class="img" src="../img/userProfile.png">
+                            </div>
+                            <div class="col-lg-9 col-sm-12 my-auto">
+                                <h1><?php echo $_SESSION["nom"]?></h1>
+                                <h3><?php echo $_SESSION["nom"]?></h3>
+                            </div>
                     </div>
-                    <div class="row mb-5">
-                        <div class="col-12">
-                            <h2>libros favoritos</h2>
-                            <div id="favoritos" class="mt-3"></div>
+                    <div id="detalles">
+                        <!--
+                        <div class="row mb-5">
+                            <div class="col-12">
+                                <h2>libros favoritos</h2>
+                                <div id="favoritos" class="mt-3"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row mb-5">
-                        <div class="col-12">
-                            <h2>libros guardados</h2>
-                            <div id="guardados" class="mt-3"></div>
-                        </div>
+                        <div class="row mb-5">
+                            <div class="col-12">
+                                <h2>libros guardados</h2>
+                                <div id="guardados" class="mt-3"></div>
+                            </div>
+                        </div>-->
                     </div>
                 </div>
         </div>
 
     </div>
     <?php
-    include "../footer.php"
-    ?>
+		include $_SERVER['DOCUMENT_ROOT']."/footer.php"
+	?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

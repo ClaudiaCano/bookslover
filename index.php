@@ -1,14 +1,15 @@
 <!doctype html>
 <?php
-	include "php/es.php";
-	include "php/bestsellers.php";
-	session_start();
+include "php/es.php";
+include "php/bestsellers.php";
+session_start();
 ?>
 <html lang="es">
+
 <head>
 	<!-- Meta tags -->
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content='¿Eres booklover? Entonces este es tu sitio'>
 </head>
 <link rel="icon" type="image/png" href="img/icon.png">
@@ -30,7 +31,31 @@
 </head>
 
 <body>
-
+	<div id="pre-sticky">
+		<div id="sticky">
+			<ul class="nav justify-content-center">
+				<li class="nav-item">
+					<button id="carrito" class="btn-navbar btn-sm btn-outline-secondary mr-5" onclick="">
+						<img src="img/compraNav.png" class="align-text-top" width="20">
+						<span id="num-items">0</span>
+					</button>
+				</li>
+				<?php if (isset($_SESSION["id"])) {
+					echo '<li class="nav-item">
+							<button id="perfil" class="btn-navbar btn-sm btn-outline-secondary" onclick="window.location.href=' . "'profile/'" . '">
+								<img src="img/userProfile.png" class="align-text-top" width="20">
+								<span id="nom-user">' . $_SESSION["nom"] . '</span>
+							</button>
+						</li>';
+				} else {
+					echo '<li class="nav-item">
+						<button class="btn-navbar btn-sm btn-outline-secondary" type="button" onclick="window.location.href=' . "'login/'" . '"><img src="img/userProfile.png" class="align-text-top" width="20"></button>
+					</li>';
+				}
+				?>
+			</ul>
+		</div>
+	</div>
 	<div id="bg">
 		<img src="img/background.png" alt="">
 	</div>
@@ -44,17 +69,17 @@
 					</form>
 				</div>
 			</ul>
-			<ul class="nav justify-content-end">
+			<ul id="nav-desk" class="nav justify-content-end">
 				<?php if (isset($_SESSION["id"])) {
 					echo '<li class="nav-item mr-2">
-							<button id="perfil" class="btn-navbar btn-sm btn-outline-secondary" onclick="">
+							<button id="perfil" class="btn-navbar btn-sm btn-outline-secondary" onclick="window.location.href=' . "'profile/'" . '">
 								<img src="img/user.png" class="align-text-top" width="20">
 								<span id="nom-user">' . $_SESSION["nom"] . '</span>
 							</button>
 						</li>';
 				} else {
 					echo '<li class="nav-item mr-2">
-						<button class="btn-navbar btn-sm btn-outline-secondary" type="button" onclick="window.location.href=' . "'login/'" . '">'.$nav_login.'</button>
+						<button class="btn-navbar btn-sm btn-outline-secondary" type="button" onclick="window.location.href=' . "'login/'" . '">' . $nav_login . '</button>
 					</li>';
 				}
 				?>
@@ -79,20 +104,20 @@
 				<div class="carousel" data-flickity='{"cellAlign": "left", "prevNextButtons": false, "pageDots": false}'>
 					<div id="card_1" class="carousel-cell p-3">
 						<div class="row align-items-center mb-0">
-							<div class="col-4">
+							<div class="col-lg-4 col-sm-12 pre-cover">
 								<a href="books/?id=<?php echo $book1['id'] ?>">
 									<img class="img-fluid cover" src="<?php echo $book1['volumeInfo']['imageLinks']['thumbnail'] ?>">
 								</a>
 							</div>
-							<div class="col-8 info">
+							<div class="col-lg-8 col-sm-12 info">
 								<div class="row mt-3" style="height: 50%;">
 									<div class="col">
 										<h2><?php echo $book1['volumeInfo']['title'] ?></h2>
 										<h3><?php echo $book1['volumeInfo']['authors'][0] ?></h3>
 									</div>
 								</div>
-								<div class="row align-items-end" style="height: 50%; margin-top: -2rem;">
-									<div class="col ">
+								<div class="row align-items-end precio">
+									<div class="col-lg-8 col-sm-10">
 										<p class="mb-0"><?php echo $book1['saleInfo']['retailPrice']["amount"] . " €" ?></p>
 										<div class="my-rating-4 no-action"></div>
 									</div>
@@ -102,20 +127,20 @@
 					</div>
 					<div id="card_2" class="carousel-cell p-3">
 						<div class="row align-items-center mb-0">
-							<div class="col-4">
+							<div class="col-lg-4 col-sm-12 pre-cover">
 								<a href="books/?id=<?php echo $book2['id'] ?>">
 									<img class="img-fluid cover" src="<?php echo $book2['volumeInfo']['imageLinks']['thumbnail'] ?>">
 								</a>
 							</div>
-							<div class="col-8 info">
+							<div class="col-lg-8 col-sm-12 info">
 								<div class="row mt-3" style="height: 50%;">
 									<div class="col">
 										<h2><?php echo $book2['volumeInfo']['title'] ?></h2>
 										<h3><?php echo $book2['volumeInfo']['authors'][0] ?></h3>
 									</div>
 								</div>
-								<div class="row align-items-end" style="height: 50%; margin-top: -2rem;">
-									<div class="col ">
+								<div class="row align-items-end precio">
+									<div class="col-lg-8 col-sm-10">
 										<p class="mb-0"><?php echo $book2['saleInfo']['listPrice']["amount"] . " €" ?></p>
 										<div class="my-rating-5 no-action"></div>
 									</div>
@@ -125,20 +150,20 @@
 					</div>
 					<div id="card_3" class="carousel-cell p-3">
 						<div class="row align-items-center mb-0">
-							<div class="col-4">
+							<div class="col-lg-4 col-sm-12 pre-cover">
 								<a href="books/?id=<?php echo $book3['id'] ?>">
 									<img class="img-fluid cover" src="<?php echo $book3['volumeInfo']['imageLinks']['thumbnail'] ?>">
 								</a>
 							</div>
-							<div class="col-8 info">
+							<div class="col-lg-8 col-sm-12 info">
 								<div class="row mt-3" style="height: 50%;">
 									<div class="col">
 										<h2><?php echo $book3['volumeInfo']['title'] ?></h2>
 										<h3><?php echo $book3['volumeInfo']['authors'][0] ?></h3>
 									</div>
 								</div>
-								<div class="row align-items-end" style="height: 50%; margin-top: -2rem;">
-									<div class="col ">
+								<div class="row align-items-end precio">
+									<div class="col-lg-8 col-sm-10">
 										<p class="mb-0"><?php echo $book3['saleInfo']['listPrice']["amount"] . " €" ?></p>
 										<div class="my-rating-4 no-action"></div>
 									</div>
@@ -148,20 +173,20 @@
 					</div>
 					<div id="card_4" class="carousel-cell p-3">
 						<div class="row align-items-center mb-0">
-							<div class="col-4">
+							<div class="col-lg-4 col-sm-12 pre-cover">
 								<a href="books/?id=<?php echo $book4['id'] ?>">
 									<img class="img-fluid cover" src="<?php echo $book4['volumeInfo']['imageLinks']['thumbnail'] ?>">
 								</a>
 							</div>
-							<div class="col-8 info">
+							<div class="col-lg-8 col-sm-12 info">
 								<div class="row mt-3" style="height: 50%;">
 									<div class="col">
 										<h2><?php echo $book4['volumeInfo']['title'] ?></h2>
 										<h3><?php echo $book4['volumeInfo']['authors'][0] ?></h3>
 									</div>
 								</div>
-								<div class="row align-items-end" style="height: 50%; margin-top: -2rem;">
-									<div class="col ">
+								<div class="row align-items-end precio">
+									<div class="col-lg-8 col-sm-10">
 										<p class="mb-0"><?php echo $book4['saleInfo']['listPrice']["amount"] . " €" ?></p>
 										<div class="my-rating-5 no-action"></div>
 									</div>
@@ -171,20 +196,20 @@
 					</div>
 					<div id="card_5" class="carousel-cell p-3">
 						<div class="row align-items-center mb-0">
-							<div class="col-4">
+							<div class="col-lg-4 col-sm-12 pre-cover">
 								<a href="books/?id=<?php echo $book5['id'] ?>">
 									<img class="img-fluid cover" src="<?php echo $book5['volumeInfo']['imageLinks']['thumbnail'] ?>">
 								</a>
 							</div>
-							<div class="col-8 info">
+							<div class="col-lg-8 col-sm-12 info">
 								<div class="row mt-3" style="height: 50%;">
 									<div class="col">
 										<h2><?php echo $book5['volumeInfo']['title'] ?></h2>
 										<h3><?php echo $book5['volumeInfo']['authors'][0] ?></h3>
 									</div>
 								</div>
-								<div class="row align-items-end" style="height: 50%; margin-top: -2rem;">
-									<div class="col ">
+								<div class="row align-items-end precio">
+									<div class="col-lg-8 col-sm-10">
 										<p class="mb-0"><?php echo $book5['saleInfo']['listPrice']["amount"] . " €" ?></p>
 										<div class="my-rating-5 no-action"></div>
 									</div>
@@ -194,20 +219,20 @@
 					</div>
 					<div id="card_6" class="carousel-cell p-3">
 						<div class="row align-items-center mb-0">
-							<div class="col-4">
+							<div class="col-lg-4 col-sm-12 pre-cover">
 								<a href="books/?id=<?php echo $book6['id'] ?>">
 									<img class="img-fluid cover" src="<?php echo $book6['volumeInfo']['imageLinks']['thumbnail'] ?>">
 								</a>
 							</div>
-							<div class="col-8 info">
+							<div class="col-lg-8 col-sm-12 info">
 								<div class="row mt-3" style="height: 50%;">
 									<div class="col">
 										<h2><?php echo $book6['volumeInfo']['title'] ?></h2>
 										<h3><?php echo $book6['volumeInfo']['authors'][0] ?></h3>
 									</div>
 								</div>
-								<div class="row align-items-end" style="height: 50%; margin-top: -2rem;">
-									<div class="col ">
+								<div class="row align-items-end precio">
+									<div class="col-lg-8 col-sm-10">
 										<p class="mb-0"><?php echo $book6['saleInfo']['listPrice']["amount"] . " €" ?></p>
 										<div class="my-rating-4 no-action"></div>
 									</div>
@@ -228,7 +253,7 @@
 		</div>-->
 	</div>
 	<?php
-		include $_SERVER['DOCUMENT_ROOT'].include "footer.php"
+	include $_SERVER['DOCUMENT_ROOT'] . include "footer.php"
 	?>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

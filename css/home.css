@@ -149,3 +149,17 @@ background: -ms-linear-gradient(-45deg, rgba(182,56,255,1) 0%, rgba(182,56,255,1
 background: linear-gradient(135deg, rgba(182,56,255,1) 0%, rgba(182,56,255,1) 11%, rgba(135,15,255,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b638ff', endColorstr='#870fff', GradientType=1 );
 }
+
+/*---------------------- RESPONSIVE ----------------------*/
+
+/*---------------------- movil ----------------------*/
+@media screen and (max-device-width : 480px) {
+	.pre-cover{
+		text-align: center;
+	}
+
+	.cover{
+		margin-top: 1.2rem;
+		margin-bottom: 1.2rem;
+	}
+}

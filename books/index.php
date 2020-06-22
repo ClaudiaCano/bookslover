@@ -44,6 +44,31 @@ $book = json_decode(file_get_contents($QUERY), true);
 <body>
 	<div class="page-bg"> </div>
 	<div class="degradado"> </div>
+	<div id="pre-sticky">
+		<div id="sticky">
+			<ul class="nav justify-content-center">
+				<li class="nav-item">
+					<button id="carrito" class="btn-navbar btn-sm btn-outline-secondary mr-5" onclick="">
+						<img src="../img/compraNav.png" class="align-text-top" width="20">
+						<span id="num-items">0</span>
+					</button>
+				</li>
+				<?php if (isset($_SESSION["id"])) {
+					echo '<li class="nav-item">
+							<button id="perfil" class="btn-navbar btn-sm btn-outline-secondary" onclick="window.location.href=' . "'../profile/'" . '">
+								<img src="../img/userProfile.png" class="align-text-top" width="20">
+								<span id="nom-user">' . $_SESSION["nom"] . '</span>
+							</button>
+						</li>';
+				} else {
+					echo '<li class="nav-item">
+						<button class="btn-navbar btn-sm btn-outline-secondary" type="button" onclick="window.location.href=' . "'../login/'" . '"><img src="img/userProfile.png" class="align-text-top" width="20"></button>
+					</li>';
+				}
+				?>
+			</ul>
+		</div>
+	</div>
 	<div id="container">
 		<nav class="navbar">
 			<a class="navbar-brand" href="../"><img id="navbar-logo" src="../img/bookslover_white.png"></a>
@@ -54,10 +79,10 @@ $book = json_decode(file_get_contents($QUERY), true);
 					</form>
 				</div>
 			</ul>
-			<ul class="nav justify-content-end">
+			<ul id="nav-desk" class="nav justify-content-end">
 				<?php if (isset($_SESSION["id"])) {
 					echo '<li class="nav-item mr-2">
-							<button id="perfil" class="btn-navbar btn-sm btn-outline-secondary" onclick="">
+							<button id="perfil" class="btn-navbar btn-sm btn-outline-secondary" onclick="window.location.href='."'../profile/'".'">
 								<img src="../img/user.png" class="align-text-top" width="20">
 								<span id="nom-user">' . $_SESSION["nom"] . '</span>
 							</button>
@@ -119,11 +144,11 @@ $book = json_decode(file_get_contents($QUERY), true);
 		</div>
 		<div class="details">
 			<div class="row mt-5">
-				<div class="col-9 pr-5 text-justify">
+				<div id="sinopsis" class="col-lg-9 col-sm-12">
 					<h2><?php echo $book_descripcion ?></h2>
 					<?php echo $book['volumeInfo']['description'] ?>
 				</div>
-				<div class="col-3">
+				<div class="col-lg-3 col-sm-12">
 					<h2><?php echo $book_detalles ?></h2>
 					<ul>
 						<li><span class="font-weight-bolder">Fecha publicación </span><?php echo $book['volumeInfo']['publishedDate'] ?></li>

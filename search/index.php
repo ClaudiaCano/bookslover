@@ -40,6 +40,31 @@ $books = json_decode(file_get_contents($QUERY));
 	<div id="bg">
 		<img src="../img/background.png" alt="">
 	</div>
+	<div id="pre-sticky">
+		<div id="sticky">
+			<ul class="nav justify-content-center">
+				<li class="nav-item">
+					<button id="carrito" class="btn-navbar btn-sm btn-outline-secondary mr-5" onclick="">
+						<img src="../img/compraNav.png" class="align-text-top" width="20">
+						<span id="num-items">0</span>
+					</button>
+				</li>
+				<?php if (isset($_SESSION["id"])) {
+					echo '<li class="nav-item">
+							<button id="perfil" class="btn-navbar btn-sm btn-outline-secondary" onclick="window.location.href=' . "'../profile/'" . '">
+								<img src="../img/userProfile.png" class="align-text-top" width="20">
+								<span id="nom-user">' . $_SESSION["nom"] . '</span>
+							</button>
+						</li>';
+				} else {
+					echo '<li class="nav-item">
+						<button class="btn-navbar btn-sm btn-outline-secondary" type="button" onclick="window.location.href=' . "'../login/'" . '"><img src="img/userProfile.png" class="align-text-top" width="20"></button>
+					</li>';
+				}
+				?>
+			</ul>
+		</div>
+	</div>
 	<div id="container">
 		<nav class="navbar">
 			<a class="navbar-brand" href="../"><img id="navbar-logo" src="../img/bookslover_white.png"></a>
@@ -50,10 +75,10 @@ $books = json_decode(file_get_contents($QUERY));
 					</form>
 				</div>
 			</ul>
-			<ul class="nav justify-content-end">
+			<ul id="nav-desk" class="nav justify-content-end">
 				<?php if (isset($_SESSION["id"])) {
 					echo '<li class="nav-item mr-2">
-							<button id="perfil" class="btn-navbar btn-sm btn-outline-secondary" onclick="">
+							<button id="perfil" class="btn-navbar btn-sm btn-outline-secondary" onclick="window.location.href='."'../profile/'".'">
 								<img src="../img/user.png" class="align-text-top" width="20">
 								<span id="nom-user">' . $_SESSION["nom"] . '</span>
 							</button>
@@ -80,7 +105,7 @@ $books = json_decode(file_get_contents($QUERY));
 
 
 				<?php if ($books->totalItems > 0) {
-					echo '<h1 id="search_title">resultados para <span id="query">&nbsp;' . $q0 . '</span></h1>
+					echo '<h1 id="search_title">resultados para <span id="query">' . $q0 . '</span></h1>
 						<div class="row row-cols-1 row-cols-md-3 mt-5">';
 					foreach ($books->items as $book) {
 						echo '<div class="col mb-4"><div class="card"><a class="book_link" href="../books/?id=' . $book->id . '">';

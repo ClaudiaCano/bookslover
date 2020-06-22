@@ -45,7 +45,7 @@ div#perfil{
 	color: red;
 }
 
-#detalles{
+#apartado{
 	bottom: var(--menu-height);
 	width: 95%;
 	left: 5%;
@@ -81,4 +81,41 @@ img#user{
 #bg img {
 	position: relative;
 	background-size: cover;
+}
+
+/*---------------------- RESPONSIVE ----------------------*/
+
+/*---------------------- movil ----------------------*/
+@media screen and (max-device-width : 480px) {
+	div#perfil {
+		width: 100%;
+		margin-top: 3rem;
+	}
+
+	#submenu {
+		top: 100vh;
+	}
+
+	#apartado {
+		width: 95%;
+		padding-top: 1rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+		text-align: center;
+	}
+
+	img#user {
+		width: 50%;
+		margin: auto;
+	}
+
+	#detalles{
+		text-align: left;
+	}
+
+	#favoritos img, #guardados img {
+		margin-right: 1rem;
+		margin-bottom: 1rem;
+		object-fit: cover;
+	}
 }
