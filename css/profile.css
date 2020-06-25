@@ -18,7 +18,7 @@ div#perfil{
 	border-radius: var(--border-radius);
 	box-shadow: var(--box-shadow);
 	padding: 2rem;
-	z-index: 2;
+	z-index: 1;
 }
 
 #submenu ul{
@@ -67,6 +67,7 @@ img#user{
 	border-radius: 3px;
 	box-shadow: var(--box-shadow);
 	margin-right: 0.7rem;
+	object-fit: cover;
 }
 
 #bg {
@@ -79,8 +80,8 @@ img#user{
 }
 
 #bg img {
-	position: relative;
-	background-size: cover;
+	width: 100%;
+    height: 100%;
 }
 
 /*---------------------- RESPONSIVE ----------------------*/
@@ -91,17 +92,22 @@ img#user{
 		width: 100%;
 		margin-top: 3rem;
 	}
-
+	#bg img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 	#submenu {
-		top: 100vh;
+		display: none;
 	}
 
 	#apartado {
 		width: 95%;
 		padding-top: 1rem;
-		padding-left: 2rem;
-		padding-right: 2rem;
+		padding-left: 1.5rem;
+		padding-right: 1rem;
 		text-align: center;
+		bottom: 0;
 	}
 
 	img#user {
@@ -114,8 +120,7 @@ img#user{
 	}
 
 	#favoritos img, #guardados img {
-		margin-right: 1rem;
+		margin-right: 0.8rem;
 		margin-bottom: 1rem;
-		object-fit: cover;
 	}
 }

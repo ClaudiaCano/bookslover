@@ -29,6 +29,14 @@
 
         $result->execute();
         if($result){
+            $consulta = "SELECT id, nombre FROM $dbTabla WHERE email=:log AND password=:pas"; 
+            $result = $db->prepare($consulta);
+            $result->execute(array(":log" => $mail, ":pas" => md5($pas)));
+            
+            session_start();
+            $fila = $result -> fetchObject();
+            $_SESSION["id"] = $fila -> id;
+            $_SESSION["nom"] = $fila -> nombre;
             //print "<p>usuario registrado</p>\n";
             header("location:../index.php");
         }else{

@@ -12,7 +12,8 @@ function perfil(){
 			favoritos(data.books.fav);
 		},
 		error: function() {
-			alert("Error al cargar el perfil");
+			$("#favoritos").append("<p>Aún no has guardado tus libros favoritos</p>");
+			//alert("Error al cargar el perfil");
 		},
 	});
 
@@ -25,7 +26,8 @@ function perfil(){
 			guardados(data.books.save);
 		},
 		error: function() {
-			alert("Error al cargar el perfil");
+			$("#guardados").append("<p>Aún no has guardado ningun libro</p>");
+			//alert("Error al cargar el perfil");
 		},
 	});
 }
@@ -76,7 +78,8 @@ function guardados(data){
 
 function compras(e){
 	$("#detalles").empty();
-	$("#detalles").html("<h1>mis compras</h1>");
+	$("#detalles").html("<h2>mis compras</h2>");
+	$("#detalles").append("<p class='mt-3'> Aún no has comprado ningún libro</p>");
 
 	/*$.ajax({
 		data: {"id": data[i].id_libro},
