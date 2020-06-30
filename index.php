@@ -10,7 +10,7 @@ session_start();
 	<!-- Meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content='¿Eres booklover? Entonces este es tu sitio'>
+	<meta name="description" content="<?php echo $home_description;?>">
 </head>
 <link rel="icon" type="image/png" href="img/icon.png">
 
@@ -27,7 +27,7 @@ session_start();
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/footer.css">
 
-<title>bookslover</title>
+<title><?php echo $home_title;?></title>
 </head>
 
 <body>

@@ -8,7 +8,7 @@ include '../php/es.php';
     <!-- Meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content='¿Eres booklover? Entonces este es tu sitio'>
+    <meta name="description" content="<?php echo $signup_description;?>">
 </head>
 <link rel="icon" type="image/png" href="../img/icon.png">
 
@@ -19,7 +19,7 @@ include '../php/es.php';
 <link rel="stylesheet" href="../css/login.css">
 <link rel="stylesheet" href="../css/style.css">
 
-<title>bookslover</title>
+<title><?php echo $signup_title;?></title>
 </head>
 
 <body>
@@ -32,20 +32,20 @@ include '../php/es.php';
                         <img id="logo" src="../img/bookslover_1_max.png" alt="bookslover">
                     </a>
                     <form class="form-signin mt-5 mb-5" action="../php/signup.php" method="POST">
-                        <h1 class="h3 mb-3 font-weight-normal">¡hola!</h1>
-                        <label for="inputNom" class="sr-only">nombre</label>
+                        <h1 class="h3 mb-3 font-weight-normal"><?php echo $signup_h1;?></h1>
+                        <label for="inputNom" class="sr-only"><?php echo $signup_label_1;?></label>
                         <input type="text" id="inputNom" name="nom" class="form-control" placeholder="nombre" required autofocus>
-                        <label for="inputEmail" class="sr-only">email</label>
+                        <label for="inputEmail" class="sr-only"><?php echo $signup_label_2;?></label>
                         <input type="email" id="inputEmail" name="email" class="form-control" placeholder="email" required >
-                        <label for="inputContra" class="sr-only">contraseña</label>
+                        <label for="inputContra" class="sr-only"><?php echo $signup_label_3;?></label>
                         <input type="password" id="inputPassword" name="pass" class="form-control" placeholder="contraseña" required>
-                        <button class="btn btn-lg btn-primary btn-block mt-5" type="submit">crear cuenta</button>
+                        <button class="btn btn-lg btn-primary btn-block mt-5" type="submit"><?php echo $signup_button;?></button>
                     </form>
                     <div class="d-flex flex-row text-center mt-5">
                         <a id="iniciar" href="../login">
-                            <div class="p-3">inicia sesión</div>
+                            <div class="p-3"><?php echo $login;?></div>
                         </a>
-                        <div id="registrar" class="p-3">crea tu cuenta</div>
+                        <div id="registrar" class="p-3"><?php echo $signup;?></div>
                     </div>
                 </div>
             </div>

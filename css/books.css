@@ -163,3 +163,13 @@ ul, li{
 
 	
 }
+
+/*---------------------- monitor pequeño ----------------------*/
+@media screen and (min-device-width : 480px) and (max-device-width: 1300px) {
+	.header{
+		width: 75%;
+	}
+	.details {
+		width: 90%;
+	}
+}

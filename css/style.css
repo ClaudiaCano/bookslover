@@ -439,6 +439,17 @@ body::-webkit-scrollbar-track:active {
 }
 
 /*---------------------- monitor pequeño ----------------------*/
-@media screen and (max-width: 800px) {
-    
+@media screen and (min-device-width : 480px) and (max-device-width: 1300px) {
+    #container {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+
+    #wrap input[type="text"]:focus {
+        width: 250px;
+    }
+
+    .flickity-slider {
+        margin-left: 5rem;
+    }
 }

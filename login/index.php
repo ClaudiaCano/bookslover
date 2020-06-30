@@ -8,7 +8,7 @@ include '../php/es.php';
     <!-- Meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content='¿Eres booklover? Entonces este es tu sitio'>
+    <meta name="description" content="<?php echo $login_description;?>">
 </head>
 <link rel="icon" type="image/png" href="../img/icon.png">
 
@@ -19,7 +19,7 @@ include '../php/es.php';
 <link rel="stylesheet" href="../css/login.css">
 <link rel="stylesheet" href="../css/style.css">
 
-<title>bookslover</title>
+<title><?php echo $login_title;?></title>
 </head>
 
 <body>
@@ -32,17 +32,17 @@ include '../php/es.php';
                         <img id="logo" src="../img/bookslover_1_max.png" alt="bookslover">
                     </a>
                     <form class="form-signin mt-5 mb-5" action="../php/login.php" method="POST">
-                        <h1 class="h3 mb-3 font-weight-normal">¿qué tal?</h1>
-                        <label for="inputEmail" class="sr-only">email</label>
+                        <h1 class="h3 mb-3 font-weight-normal"><?php echo $login_h1;?></h1>
+                        <label for="inputEmail" class="sr-only"><?php echo $login_label_1;?></label>
                         <input type="email" id="inputEmail" name="email" class="form-control" placeholder="email" required autofocus>
-                        <label for="inputPassword" class="sr-only">contraseña</label>
+                        <label for="inputPassword" class="sr-only"><?php echo $login_label_2;?></label>
                         <input type="password" id="inputPassword" name="pass" class="form-control" placeholder="contraseña" required>
-                        <button class="btn btn-lg btn-primary btn-block mt-5" type="submit">iniciar sesión</button>
+                        <button class="btn btn-lg btn-primary btn-block mt-5" type="submit"><?php echo $login_button;?></button>
                     </form>
                     <div class="d-flex flex-row text-center mt-5">
-                        <div id="iniciar" class="p-3">inicia sesión</div>
+                        <div id="iniciar" class="p-3"><?php echo $login;?></div>
                         <a id="registrar" href="../signup">
-                            <div  class="p-3">crea tu cuenta</div>
+                            <div  class="p-3"><?php echo $signup;?></div>
                         </a>
                     </div>
                 </div>

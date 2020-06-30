@@ -9,7 +9,7 @@ include '../php/proteccion.php';
     <!-- Meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content='¿Eres booklover? Entonces este es tu sitio'>
+    <meta name="description" content="<?php echo $profile_description;?>">
 </head>
 <link rel="icon" type="image/png" href="../img/icon.png">
 
@@ -21,7 +21,7 @@ include '../php/proteccion.php';
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/footer.css">
 
-<title><?php echo $_SESSION["nom"] ?> - bookslover</title>
+<title><?php echo $_SESSION["nom"].$profile_title?> </title>
 </head>
 
 <body>
@@ -44,10 +44,6 @@ include '../php/proteccion.php';
 								<span id="nom-user">' . $_SESSION["nom"] . '</span>
 							</button>
 						</li>';
-				} else {
-					echo '<li class="nav-item">
-						<button class="btn-navbar btn-sm btn-outline-secondary" type="button" onclick="window.location.href=' . "'../login/'" . '"><img src="img/userProfile.png" class="align-text-top" width="20"></button>
-					</li>';
 				}
 				?>
 			</ul>
@@ -90,10 +86,10 @@ include '../php/proteccion.php';
 
                 <div id="submenu" class="card">
                     <ul>
-                        <li><a id="cuenta" href="javascript:perfil()">mi cuenta</a></li>
-                        <li><a  id="compras" href="javascript:compras()">mis compras</a></li>
-                        <li><a href="#">configuración</a></li>
-                        <li id="logout"><a href="../php/logout.php">cerrar sesión</a></li>
+                        <li><a id="cuenta" href="javascript:perfil()"><?php echo $profile_cuenta;?></a></li>
+                        <li><a  id="compras" href="javascript:compras()"><?php echo $profile_compras;?></a></li>
+                        <li><a href="#"><?php echo $profile_options;?></a></li>
+                        <li id="logout"><a href="../php/logout.php"><?php echo $profile_logout;?></a></li>
                     </ul>
                 </div>
                 <div id="apartado" class="card">
@@ -107,19 +103,6 @@ include '../php/proteccion.php';
                             </div>
                     </div>
                     <div id="detalles">
-                        <!--
-                        <div class="row mb-5">
-                            <div class="col-12">
-                                <h2>libros favoritos</h2>
-                                <div id="favoritos" class="mt-3"></div>
-                            </div>
-                        </div>
-                        <div class="row mb-5">
-                            <div class="col-12">
-                                <h2>libros guardados</h2>
-                                <div id="guardados" class="mt-3"></div>
-                            </div>
-                        </div>-->
                     </div>
                 </div>
         </div>

@@ -106,6 +106,24 @@ h3.card-title{
 		padding-left: 150px;
 		padding-bottom: 1rem;
 	}
+}
 
-	
+/*---------------------- monitor pequeño ----------------------*/
+@media screen and (min-device-width : 480px) and (max-device-width: 1300px) {
+	.card {
+		height: 250px;
+		margin: 0 0 1rem 0;
+	}
+    .cover{
+		height: 250px;
+		width: 158px;
+	}
+
+	.card_background{
+		top: 15px;
+		height: 220px;
+		padding-top: 2rem;
+		padding-left: 170px;
+		padding-bottom: 1rem;
+	}
 }

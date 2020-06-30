@@ -125,3 +125,14 @@ img#user{
 		margin-bottom: 1rem;
 	}
 }
+
+/*---------------------- monitor pequeño ----------------------*/
+@media screen and (min-device-width : 480px) and (max-device-width: 1300px) {
+	div#perfil {
+		width: 90%;
+	}
+
+    #favoritos img, #guardados img {
+		margin-bottom: 0.7rem;
+	}
+}

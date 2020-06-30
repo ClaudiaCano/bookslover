@@ -18,7 +18,7 @@ $books = json_decode(file_get_contents($QUERY));
 	<!-- Meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content='¿Eres booklover? Entonces este es tu sitio'>
+	<meta name="description" content="<?php echo $search_description;?>">
 </head>
 <link rel="icon" type="image/png" href="../img/icon.png">
 
@@ -32,7 +32,7 @@ $books = json_decode(file_get_contents($QUERY));
 <link rel="stylesheet" href="../css/footer.css">
 <link rel="stylesheet" href="../css/search.css">
 
-<title>Resultados</title>
+<title><?php echo $search_title;?></title>
 </head>
 
 <body>
@@ -58,7 +58,7 @@ $books = json_decode(file_get_contents($QUERY));
 						</li>';
 				} else {
 					echo '<li class="nav-item">
-						<button class="btn-navbar btn-sm btn-outline-secondary" type="button" onclick="window.location.href=' . "'../login/'" . '"><img src="img/userProfile.png" class="align-text-top" width="20"></button>
+						<button class="btn-navbar btn-sm btn-outline-secondary" type="button" onclick="window.location.href=' . "'../login/'" . '"><img src="../img/userProfile.png" class="align-text-top" width="20"></button>
 					</li>';
 				}
 				?>
@@ -99,14 +99,9 @@ $books = json_decode(file_get_contents($QUERY));
 		</nav>
 		<div class="row mt-5">
 			<div class="col-12">
-
-				<!--<h4> echo $books->totalItems?> resultados</h4>
-		<p> echo $QUERY?></p>-->
-
-
 				<?php if ($books->totalItems > 0) {
-					echo '<h1 id="search_title">resultados para <span id="query">' . $q0 . '</span></h1>
-						<div class="row row-cols-1 row-cols-md-3 mt-5">';
+					echo '<h1 id="search_title">'.$search_results.'<span id="query">' . $q0 . '</span></h1>
+						<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 mt-5">';
 					foreach ($books->items as $book) {
 						echo '<div class="col mb-4"><div class="card"><a class="book_link" href="../books/?id=' . $book->id . '">';
 						if (!empty($book->volumeInfo->imageLinks->thumbnail)) {
@@ -122,28 +117,8 @@ $books = json_decode(file_get_contents($QUERY));
 						echo "</div></div></div>";
 					}
 					echo '</div>';
-				} else echo '<h1 id="search_title">¡Qué pena! <br>No hay resultados para <span id="query">&nbsp;' . $q0 . '</span></h1>
-							<h4 id="search_sub" class="mt-4">¿Por qué no pruebas otra vez?</h4>';
-				?>
-
-				<?php /*if($books->totalItems > 0){
-				echo '<h1 id="search_title">resultados para <span id="query">&nbsp;'.$q0.'</span></h1>
-							<div class="row row-cols-1 row-cols-md-3 mt-5">';
-					foreach($books->items as $book){
-						echo '
-							<div class="col mb-4"><div class="card">
-							<img class="img cover" src="'.$book->volumeInfo->imageLinks->thumbnail.'"/>
-							<div class="card_background">
-								<h3 class="card-title">'.$book->volumeInfo->title.'</h3>';
-						if(!empty($book->volumeInfo->authors)){				
-							echo '<p class="card-text">'.implode(", ", $book->volumeInfo->authors).'</p>';
-						}
-							echo "</div></div></div>";
-					}
-				echo '</div>';
-				}else echo '<h1 id="search_title">¡Qué pena! <br>No hay resultados para <span id="query">&nbsp;'.$q0.'</span></h1>
-							<h4 id="search_sub" class="mt-4">¿Por qué no pruebas otra vez?</h4>';
-							*/
+				} else echo '<h1 id="search_title">'.$search_no_results.'<span id="query">&nbsp;' . $q0 . '</span></h1>
+							<h4 id="search_sub" class="mt-4">'.$search_help.'</h4>';
 				?>
 			</div>
 		</div>
